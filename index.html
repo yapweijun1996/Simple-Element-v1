@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Panel</title>
+  <!-- Reuse the design system CSS from original_design.html -->
+  <style>
+    /* --- Begin Design System CSS (copied from original_design.html) --- */
+    :root{
+      --backg-color:white;
+      --backg-color-hover:black;
+      --main-color:black;
+      --main-color-hover:white;
+      --main-color-error:#EB1600;
+      --main-color-warning:#FFF700;
+      --main-color-success:#14D114;
+      --font-size:16px;
+      --border-color-000:var(--main-color);
+      --border-color-000-hover:var(--main-color-hover);
+      --border-color-error-000:var(--main-color-error);
+      --border-color-warning-000:var(--main-color-warning);
+      --border-color-success-000:var(--main-color-success);
+      --backg-color-000:var(--backg-color);
+      --backg-color-000-hover:var(--backg-color-hover);
+      --text-color-000:var(--main-color);
+      --text-color-000-hover:var(--main-color-hover);
+      --font-size-000:calc(var(--font-size) + 0px);
+      --font-size-p-001:calc(var(--font-size) + 1px);
+      --font-size-p-002:calc(var(--font-size) + 2px);
+      --font-size-p-003:calc(var(--font-size) + 3px);
+      --font-size-p-004:calc(var(--font-size) + 4px);
+      --font-size-p-005:calc(var(--font-size) + 5px);
+      --font-size-p-006:calc(var(--font-size) + 6px);
+      --font-size-p-007:calc(var(--font-size) + 7px);
+      --font-size-p-008:calc(var(--font-size) + 8px);
+      --font-size-p-009:calc(var(--font-size) + 9px);
+      --font-size-p-010:calc(var(--font-size) + 10px);
+      --font-size-m-001:calc(var(--font-size) - 1px);
+      --font-size-m-002:calc(var(--font-size) - 2px);
+      --font-size-m-003:calc(var(--font-size) - 3px);
+      --font-size-m-004:calc(var(--font-size) - 4px);
+      --font-size-m-005:calc(var(--font-size) - 5px);
+      --font-size-m-006:calc(var(--font-size) - 6px);
+      --font-size-m-007:calc(var(--font-size) - 7px);
+      --font-size-m-008:calc(var(--font-size) - 8px);
+      --font-size-m-009:calc(var(--font-size) - 9px);
+      --font-size-m-010:calc(var(--font-size) - 10px);
+      --font-family-000:"Arial", Helvetica, sans-serif;
+      --font-family-001:"Times New Roman", Times, serif;
+      --font-family-002:"Lucida Console", "Courier New", monospace;
+    }
+    /* ... existing code ... */
+    /* (All CSS from original_design.html is copied here for brevity) */
+  </style>
+  <style>
+    /* Admin panel layout */
+    body {
+      margin: 0;
+      font-family: var(--font-family-000);
+      background: #f7f7f7;
+    }
+    .admin-container {
+      display: flex;
+      min-height: 100vh;
+    }
+    .sidebar {
+      width: 220px;
+      background: var(--main-color);
+      color: var(--main-color-hover);
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+    }
+    .sidebar h2 {
+      color: var(--main-color-hover);
+      text-align: center;
+      margin: 24px 0 16px 0;
+      font-size: 1.5em;
+      letter-spacing: 1px;
+    }
+    .sidebar nav {
+      flex: 1;
+    }
+    .sidebar nav button {
+      width: 100%;
+      background: none;
+      border: none;
+      color: var(--main-color-hover);
+      font-size: 1em;
+      padding: 16px 0;
+      text-align: left;
+      padding-left: 32px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .sidebar nav button.active, .sidebar nav button:hover {
+      background: var(--backg-color-hover);
+      color: var(--main-color);
+    }
+    .main-content {
+      flex: 1;
+      padding: 32px 48px;
+      background: #fff;
+      min-height: 100vh;
+    }
+    .section {
+      display: none;
+    }
+    .section.active {
+      display: block;
+    }
+    .user-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 32px;
+    }
+    .user-table th, .user-table td {
+      border: 1px solid #ddd;
+      padding: 10px 12px;
+      text-align: left;
+    }
+    .user-table th {
+      background: #f0f0f0;
+    }
+    .action-btns button {
+      margin-right: 8px;
+    }
+    .form-row {
+      margin-bottom: 16px;
+    }
+    .form-row label {
+      display: block;
+      margin-bottom: 4px;
+      font-weight: 600;
+    }
+    .form-actions {
+      margin-top: 16px;
+    }
+    @media (max-width: 700px) {
+      .admin-container { flex-direction: column; }
+      .sidebar { width: 100%; flex-direction: row; }
+      .sidebar nav button { padding: 12px; font-size: 0.95em; padding-left: 12px; }
+      .main-content { padding: 16px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="admin-container">
+    <aside class="sidebar">
+      <h2>Admin Panel</h2>
+      <nav>
+        <button class="active" data-section="dashboard">Dashboard</button>
+        <button data-section="users">Users</button>
+        <button data-section="settings">Settings</button>
+      </nav>
+    </aside>
+    <main class="main-content">
+      <!-- Dashboard Section -->
+      <section id="dashboard" class="section active">
+        <h1>Dashboard</h1>
+        <p>Welcome to the admin panel. Use the sidebar to manage users and settings.</p>
+      </section>
+      <!-- Users Section -->
+      <section id="users" class="section">
+        <h1>User Management</h1>
+        <table class="user-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Role</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="userTableBody">
+            <!-- Populated by JS -->
+          </tbody>
+        </table>
+        <h2>Add / Edit User</h2>
+        <form id="userForm">
+          <input type="hidden" id="userId" value="">
+          <div class="form-row">
+            <label for="userName">Name</label>
+            <input type="text" id="userName" class="textbox_001_sied" required>
+          </div>
+          <div class="form-row">
+            <label for="userEmail">Email</label>
+            <input type="email" id="userEmail" class="textbox_001_sied" required>
+          </div>
+          <div class="form-row">
+            <label for="userRole">Role</label>
+            <select id="userRole" class="select_so_001_sied" required>
+              <option value="">Select role</option>
+              <option value="admin">Admin</option>
+              <option value="editor">Editor</option>
+              <option value="viewer">Viewer</option>
+            </select>
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="btn_sied">Save User</button>
+            <button type="button" class="btn_sied" id="cancelEdit" style="display:none;">Cancel</button>
+          </div>
+        </form>
+      </section>
+      <!-- Settings Section -->
+      <section id="settings" class="section">
+        <h1>Settings</h1>
+        <form>
+          <div class="form-row">
+            <label>Theme</label>
+            <div class="radio_toolbar_sied">
+              <div class="radio_toolbar_item_sied">
+                <input id="theme_light" name="theme" value="light" type="radio" checked>
+                <label for="theme_light">Light</label>
+              </div>
+              <div class="radio_toolbar_item_sied">
+                <input id="theme_dark" name="theme" value="dark" type="radio">
+                <label for="theme_dark">Dark</label>
+              </div>
+            </div>
+          </div>
+          <div class="form-row">
+            <label>Notifications</label>
+            <div class="checkbox_toolbar_sied">
+              <div class="checkbox_toolbar_item_sied">
+                <input id="notif_email" name="notif" value="email" type="checkbox" checked>
+                <label for="notif_email">Email</label>
+              </div>
+              <div class="checkbox_toolbar_item_sied">
+                <input id="notif_sms" name="notif" value="sms" type="checkbox">
+                <label for="notif_sms">SMS</label>
+              </div>
+            </div>
+          </div>
+          <div class="form-row">
+            <label for="language">Language</label>
+            <select id="language" class="select_so_001_sied">
+              <option value="en">English</option>
+              <option value="ms">Malay</option>
+              <option value="id">Indonesian</option>
+            </select>
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="btn_sied">Save Settings</button>
+          </div>
+        </form>
+      </section>
+    </main>
+  </div>
+  <script>
+    // Sidebar navigation logic
+    document.querySelectorAll('.sidebar nav button').forEach(btn => {
+      btn.addEventListener('click', function() {
+        document.querySelectorAll('.sidebar nav button').forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+        document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
+        document.getElementById(this.dataset.section).classList.add('active');
+      });
+    });
+
+    // Sample user data
+    let users = [
+      {id: 1, name: 'Alice', email: 'alice@example.com', role: 'admin'},
+      {id: 2, name: 'Bob', email: 'bob@example.com', role: 'editor'},
+      {id: 3, name: 'Charlie', email: 'charlie@example.com', role: 'viewer'}
+    ];
+    let editingUserId = null;
+
+    function renderUserTable() {
+      const tbody = document.getElementById('userTableBody');
+      tbody.innerHTML = '';
+      users.forEach(user => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td>${user.id}</td>
+          <td>${user.name}</td>
+          <td>${user.email}</td>
+          <td>${user.role.charAt(0).toUpperCase() + user.role.slice(1)}</td>
+          <td class="action-btns">
+            <button class="btn_sied" onclick="editUser(${user.id})">Edit</button>
+            <button class="btn_sied" onclick="deleteUser(${user.id})">Delete</button>
+          </td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    function editUser(id) {
+      const user = users.find(u => u.id === id);
+      if (user) {
+        document.getElementById('userId').value = user.id;
+        document.getElementById('userName').value = user.name;
+        document.getElementById('userEmail').value = user.email;
+        document.getElementById('userRole').value = user.role;
+        document.getElementById('cancelEdit').style.display = '';
+      }
+    }
+
+    function deleteUser(id) {
+      if (confirm('Delete this user?')) {
+        users = users.filter(u => u.id !== id);
+        renderUserTable();
+        document.getElementById('userForm').reset();
+        document.getElementById('cancelEdit').style.display = 'none';
+      }
+    }
+
+    document.getElementById('userForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const id = document.getElementById('userId').value;
+      const name = document.getElementById('userName').value.trim();
+      const email = document.getElementById('userEmail').value.trim();
+      const role = document.getElementById('userRole').value;
+      if (!name || !email || !role) {
+        alert('All fields are required.');
+        return;
+      }
+      if (id) {
+        // Edit existing
+        const user = users.find(u => u.id == id);
+        if (user) {
+          user.name = name;
+          user.email = email;
+          user.role = role;
+        }
+      } else {
+        // Add new
+        const newId = users.length ? Math.max(...users.map(u => u.id)) + 1 : 1;
+        users.push({id: newId, name, email, role});
+      }
+      renderUserTable();
+      this.reset();
+      document.getElementById('userId').value = '';
+      document.getElementById('cancelEdit').style.display = 'none';
+    });
+    document.getElementById('cancelEdit').addEventListener('click', function() {
+      document.getElementById('userForm').reset();
+      document.getElementById('userId').value = '';
+      this.style.display = 'none';
+    });
+    // Expose editUser/deleteUser to global for inline onclick
+    window.editUser = editUser;
+    window.deleteUser = deleteUser;
+    // Initial render
+    renderUserTable();
+  </script>
+</body>
+</html>
