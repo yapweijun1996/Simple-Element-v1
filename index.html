@@ -6,7 +6,7 @@
   <title>Admin Panel</title>
   <!-- Reuse the design system CSS from original_design.html -->
   <style>
-    /* --- Begin Design System CSS (copied from original_design.html) --- */
+    /* initialization [start] */
     :root{
       --backg-color:white;
       --backg-color-hover:black;
@@ -16,6 +16,7 @@
       --main-color-warning:#FFF700;
       --main-color-success:#14D114;
       --font-size:16px;
+
       --border-color-000:var(--main-color);
       --border-color-000-hover:var(--main-color-hover);
       --border-color-error-000:var(--main-color-error);
@@ -50,8 +51,90 @@
       --font-family-001:"Times New Roman", Times, serif;
       --font-family-002:"Lucida Console", "Courier New", monospace;
     }
-    /* ... existing code ... */
-    /* (All CSS from original_design.html is copied here for brevity) */
+
+    /* Font Size [start] */
+    .font_sied_000{font-family:var(--font-family-000);color:var(--text-color-000);font-size:var(--font-size-000);}
+    .font_sied_p_001{font-family:var(--font-family-000);color:var(--text-color-000);font-size:var(--font-size-p-001);}
+    .font_sied_p_002{font-family:var(--font-family-000);color:var(--text-color-000);font-size:var(--font-size-p-002);}
+    .font_sied_p_003{font-family:var(--font-family-000);color:var(--text-color-000);font-size:var(--font-size-p-003);}
+    .font_sied_p_004{font-family:var(--font-family-000);color:var(--text-color-000);font-size:var(--font-size-p-004);}
+    .font_sied_p_005{font-family:var(--font-family-000);color:var(--text-color-000);font-size:var(--font-size-p-005);}
+    .font_sied_p_006{font-family:var(--font-family-000);color:var(--text-color-000);font-size:var(--font-size-p-006);}
+    .font_sied_p_007{font-family:var(--font-family-000);color:var(--text-color-000);font-size:var(--font-size-p-007);}
+    .font_sied_p_008{font-family:var(--font-family-000);color:var(--text-color-000);font-size:var(--font-size-p-008);}
+    .font_sied_p_009{font-family:var(--font-family-000);color:var(--text-color-000);font-size:var(--font-size-p-009);}
+    .font_sied_p_010{font-family:var(--font-family-000);color:var(--text-color-000);font-size:var(--font-size-p-010);}
+    .font_sied_m_001{font-family:var(--font-family-000);color:var(--text-color-000);font-size:var(--font-size-m-001);}
+    .font_sied_m_002{font-family:var(--font-family-000);color:var(--text-color-000);font-size:var(--font-size-m-002);}
+    .font_sied_m_003{font-family:var(--font-family-000);color:var(--text-color-000);font-size:var(--font-size-m-003);}
+    .font_sied_m_004{font-family:var(--font-family-000);color:var(--text-color-000);font-size:var(--font-size-m-004);}
+    .font_sied_m_005{font-family:var(--font-family-000);color:var(--text-color-000);font-size:var(--font-size-m-005);}
+    .font_sied_m_006{font-family:var(--font-family-000);color:var(--text-color-000);font-size:var(--font-size-m-006);}
+    .font_sied_m_007{font-family:var(--font-family-000);color:var(--text-color-000);font-size:var(--font-size-m-007);}
+    .font_sied_m_008{font-family:var(--font-family-000);color:var(--text-color-000);font-size:var(--font-size-m-008);}
+    .font_sied_m_009{font-family:var(--font-family-000);color:var(--text-color-000);font-size:var(--font-size-m-009);}
+    .font_sied_m_010{font-family:var(--font-family-000);color:var(--text-color-000);font-size:var(--font-size-m-010);}
+    /* Font Size [end  ] */
+    /* initialization [end  ] */
+
+    /* Button [start] */
+    .btn_sied{
+      color:var(--text-color-000);
+      font-size:var(--font-size-000);
+      font-family:var(--font-family-000);
+      background: var(--backg-color-000);
+      border:2px solid var(--main-color);
+      font-weight:600;
+      padding:6px 12px;
+    }
+    .btn_sied:hover{
+      color:var(--text-color-000-hover);
+      background: var(--backg-color-000-hover);
+      cursor:pointer;
+    }
+    /* Button [end  ] */
+
+    /* Radio Box [start] */
+    .radio_label_sied{
+      color:var(--text-color-000);
+      font-size:var(--font-size-000);
+      font-weight:600;
+      font-family:var(--font-family-000);
+    }
+    .radio_label_sied:hover{
+      cursor:pointer;
+      accent-color: var(--main-color);
+    }
+    .radio_sied:checked {
+      accent-color: var(--main-color);
+    }
+
+    .radio_toolbar_sied input[type="radio"] {
+      display: none;
+    }
+
+    .radio_toolbar_item_sied{
+      display:inline-block;
+      padding:5px 0px;
+    }
+
+    .radio_toolbar_sied label {
+      background-color: var(--backg-color-000);
+      color:var(--text-color-000);
+      font-size:var(--font-size-000);
+      font-family:var(--font-family-000);
+      padding:6px 12px;
+      cursor: pointer;
+      font-weight:600;
+      border:2px solid var(--border-color-000);
+      display:inline-block;
+    }
+
+    .radio_toolbar_sied input[type="radio"]:checked+label {
+      background-color: var(--backg-color-000-hover);
+      color:var(--text-color-000-hover);
+    }
+    /* Radio Box [end  ] */
   </style>
   <style>
     /* Admin panel layout */
