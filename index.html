@@ -1,433 +1,632 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Admin Panel</title>
-  <!-- Reuse the design system CSS from original_design.html -->
-  <style>
-    /* initialization [start] */
-    :root{
-      --backg-color:white;
-      --backg-color-hover:black;
-      --main-color:black;
-      --main-color-hover:white;
-      --main-color-error:#EB1600;
-      --main-color-warning:#FFF700;
-      --main-color-success:#14D114;
-      --font-size:16px;
+<style>
+  /* initialization [start] */
+  :root{
+    --backg-color:white;
+    --backg-color-hover:black;
+    --main-color:black;
+    --main-color-hover:white;
+    --main-color-error:#EB1600;
+    --main-color-warning:#FFF700;
+    --main-color-success:#14D114;
+    --font-size:16px;
 
-      --border-color-000:var(--main-color);
-      --border-color-000-hover:var(--main-color-hover);
-      --border-color-error-000:var(--main-color-error);
-      --border-color-warning-000:var(--main-color-warning);
-      --border-color-success-000:var(--main-color-success);
-      --backg-color-000:var(--backg-color);
-      --backg-color-000-hover:var(--backg-color-hover);
-      --text-color-000:var(--main-color);
-      --text-color-000-hover:var(--main-color-hover);
-      --font-size-000:calc(var(--font-size) + 0px);
-      --font-size-p-001:calc(var(--font-size) + 1px);
-      --font-size-p-002:calc(var(--font-size) + 2px);
-      --font-size-p-003:calc(var(--font-size) + 3px);
-      --font-size-p-004:calc(var(--font-size) + 4px);
-      --font-size-p-005:calc(var(--font-size) + 5px);
-      --font-size-p-006:calc(var(--font-size) + 6px);
-      --font-size-p-007:calc(var(--font-size) + 7px);
-      --font-size-p-008:calc(var(--font-size) + 8px);
-      --font-size-p-009:calc(var(--font-size) + 9px);
-      --font-size-p-010:calc(var(--font-size) + 10px);
-      --font-size-m-001:calc(var(--font-size) - 1px);
-      --font-size-m-002:calc(var(--font-size) - 2px);
-      --font-size-m-003:calc(var(--font-size) - 3px);
-      --font-size-m-004:calc(var(--font-size) - 4px);
-      --font-size-m-005:calc(var(--font-size) - 5px);
-      --font-size-m-006:calc(var(--font-size) - 6px);
-      --font-size-m-007:calc(var(--font-size) - 7px);
-      --font-size-m-008:calc(var(--font-size) - 8px);
-      --font-size-m-009:calc(var(--font-size) - 9px);
-      --font-size-m-010:calc(var(--font-size) - 10px);
-      --font-family-000:"Arial", Helvetica, sans-serif;
-      --font-family-001:"Times New Roman", Times, serif;
-      --font-family-002:"Lucida Console", "Courier New", monospace;
-    }
+    --border-color-000:var(--main-color);
+    --border-color-000-hover:var(--main-color-hover);
+    --border-color-error-000:var(--main-color-error);
+    --border-color-warning-000:var(--main-color-warning);
+    --border-color-success-000:var(--main-color-success);
+    --backg-color-000:var(--backg-color);
+    --backg-color-000-hover:var(--backg-color-hover);
+    --text-color-000:var(--main-color);
+    --text-color-000-hover:var(--main-color-hover);
+    --font-size-000:calc(var(--font-size) + 0px);
+    --font-size-p-001:calc(var(--font-size) + 1px);
+    --font-size-p-002:calc(var(--font-size) + 2px);
+    --font-size-p-003:calc(var(--font-size) + 3px);
+    --font-size-p-004:calc(var(--font-size) + 4px);
+    --font-size-p-005:calc(var(--font-size) + 5px);
+    --font-size-p-006:calc(var(--font-size) + 6px);
+    --font-size-p-007:calc(var(--font-size) + 7px);
+    --font-size-p-008:calc(var(--font-size) + 8px);
+    --font-size-p-009:calc(var(--font-size) + 9px);
+    --font-size-p-010:calc(var(--font-size) + 10px);
+    --font-size-m-001:calc(var(--font-size) - 1px);
+    --font-size-m-002:calc(var(--font-size) - 2px);
+    --font-size-m-003:calc(var(--font-size) - 3px);
+    --font-size-m-004:calc(var(--font-size) - 4px);
+    --font-size-m-005:calc(var(--font-size) - 5px);
+    --font-size-m-006:calc(var(--font-size) - 6px);
+    --font-size-m-007:calc(var(--font-size) - 7px);
+    --font-size-m-008:calc(var(--font-size) - 8px);
+    --font-size-m-009:calc(var(--font-size) - 9px);
+    --font-size-m-010:calc(var(--font-size) - 10px);
+    --font-family-000:"Arial", Helvetica, sans-serif;
+    --font-family-001:"Times New Roman", Times, serif;
+    --font-family-002:"Lucida Console", "Courier New", monospace;
+  }
 
-    /* Font Size [start] */
-    .font_sied_000{font-family:var(--font-family-000);color:var(--text-color-000);font-size:var(--font-size-000);}
-    .font_sied_p_001{font-family:var(--font-family-000);color:var(--text-color-000);font-size:var(--font-size-p-001);}
-    .font_sied_p_002{font-family:var(--font-family-000);color:var(--text-color-000);font-size:var(--font-size-p-002);}
-    .font_sied_p_003{font-family:var(--font-family-000);color:var(--text-color-000);font-size:var(--font-size-p-003);}
-    .font_sied_p_004{font-family:var(--font-family-000);color:var(--text-color-000);font-size:var(--font-size-p-004);}
-    .font_sied_p_005{font-family:var(--font-family-000);color:var(--text-color-000);font-size:var(--font-size-p-005);}
-    .font_sied_p_006{font-family:var(--font-family-000);color:var(--text-color-000);font-size:var(--font-size-p-006);}
-    .font_sied_p_007{font-family:var(--font-family-000);color:var(--text-color-000);font-size:var(--font-size-p-007);}
-    .font_sied_p_008{font-family:var(--font-family-000);color:var(--text-color-000);font-size:var(--font-size-p-008);}
-    .font_sied_p_009{font-family:var(--font-family-000);color:var(--text-color-000);font-size:var(--font-size-p-009);}
-    .font_sied_p_010{font-family:var(--font-family-000);color:var(--text-color-000);font-size:var(--font-size-p-010);}
-    .font_sied_m_001{font-family:var(--font-family-000);color:var(--text-color-000);font-size:var(--font-size-m-001);}
-    .font_sied_m_002{font-family:var(--font-family-000);color:var(--text-color-000);font-size:var(--font-size-m-002);}
-    .font_sied_m_003{font-family:var(--font-family-000);color:var(--text-color-000);font-size:var(--font-size-m-003);}
-    .font_sied_m_004{font-family:var(--font-family-000);color:var(--text-color-000);font-size:var(--font-size-m-004);}
-    .font_sied_m_005{font-family:var(--font-family-000);color:var(--text-color-000);font-size:var(--font-size-m-005);}
-    .font_sied_m_006{font-family:var(--font-family-000);color:var(--text-color-000);font-size:var(--font-size-m-006);}
-    .font_sied_m_007{font-family:var(--font-family-000);color:var(--text-color-000);font-size:var(--font-size-m-007);}
-    .font_sied_m_008{font-family:var(--font-family-000);color:var(--text-color-000);font-size:var(--font-size-m-008);}
-    .font_sied_m_009{font-family:var(--font-family-000);color:var(--text-color-000);font-size:var(--font-size-m-009);}
-    .font_sied_m_010{font-family:var(--font-family-000);color:var(--text-color-000);font-size:var(--font-size-m-010);}
-    /* Font Size [end  ] */
-    /* initialization [end  ] */
+  /* Font Size [start] */
+  .font_sied_000{font-family:var(--font-family-000);color:var(--text-color-000);font-size:var(--font-size-000);}
+  .font_sied_p_001{font-family:var(--font-family-000);color:var(--text-color-000);font-size:var(--font-size-p-001);}
+  .font_sied_p_002{font-family:var(--font-family-000);color:var(--text-color-000);font-size:var(--font-size-p-002);}
+  .font_sied_p_003{font-family:var(--font-family-000);color:var(--text-color-000);font-size:var(--font-size-p-003);}
+  .font_sied_p_004{font-family:var(--font-family-000);color:var(--text-color-000);font-size:var(--font-size-p-004);}
+  .font_sied_p_005{font-family:var(--font-family-000);color:var(--text-color-000);font-size:var(--font-size-p-005);}
+  .font_sied_p_006{font-family:var(--font-family-000);color:var(--text-color-000);font-size:var(--font-size-p-006);}
+  .font_sied_p_007{font-family:var(--font-family-000);color:var(--text-color-000);font-size:var(--font-size-p-007);}
+  .font_sied_p_008{font-family:var(--font-family-000);color:var(--text-color-000);font-size:var(--font-size-p-008);}
+  .font_sied_p_009{font-family:var(--font-family-000);color:var(--text-color-000);font-size:var(--font-size-p-009);}
+  .font_sied_p_010{font-family:var(--font-family-000);color:var(--text-color-000);font-size:var(--font-size-p-010);}
+  .font_sied_m_001{font-family:var(--font-family-000);color:var(--text-color-000);font-size:var(--font-size-m-001);}
+  .font_sied_m_002{font-family:var(--font-family-000);color:var(--text-color-000);font-size:var(--font-size-m-002);}
+  .font_sied_m_003{font-family:var(--font-family-000);color:var(--text-color-000);font-size:var(--font-size-m-003);}
+  .font_sied_m_004{font-family:var(--font-family-000);color:var(--text-color-000);font-size:var(--font-size-m-004);}
+  .font_sied_m_005{font-family:var(--font-family-000);color:var(--text-color-000);font-size:var(--font-size-m-005);}
+  .font_sied_m_006{font-family:var(--font-family-000);color:var(--text-color-000);font-size:var(--font-size-m-006);}
+  .font_sied_m_007{font-family:var(--font-family-000);color:var(--text-color-000);font-size:var(--font-size-m-007);}
+  .font_sied_m_008{font-family:var(--font-family-000);color:var(--text-color-000);font-size:var(--font-size-m-008);}
+  .font_sied_m_009{font-family:var(--font-family-000);color:var(--text-color-000);font-size:var(--font-size-m-009);}
+  .font_sied_m_010{font-family:var(--font-family-000);color:var(--text-color-000);font-size:var(--font-size-m-010);}
+  /* Font Size [end  ] */
+  /* initialization [end  ] */
 
-    /* Button [start] */
-    .btn_sied{
-      color:var(--text-color-000);
-      font-size:var(--font-size-000);
-      font-family:var(--font-family-000);
-      background: var(--backg-color-000);
-      border:2px solid var(--main-color);
-      font-weight:600;
-      padding:6px 12px;
-    }
-    .btn_sied:hover{
-      color:var(--text-color-000-hover);
-      background: var(--backg-color-000-hover);
-      cursor:pointer;
-    }
-    /* Button [end  ] */
+  /* Button [start] */
+  .btn_sied{
+    color:var(--text-color-000);
+    font-size:var(--font-size-000);
+    font-family:var(--font-family-000);
+    background: var(--backg-color-000);
+    border:2px solid var(--main-color);
+    font-weight:600;
+    padding:6px 12px;
+  }
+  .btn_sied:hover{
+    color:var(--text-color-000-hover);
+    background: var(--backg-color-000-hover);
+    cursor:pointer;
+  }
+  /* Button [end  ] */
 
-    /* Radio Box [start] */
-    .radio_label_sied{
-      color:var(--text-color-000);
-      font-size:var(--font-size-000);
-      font-weight:600;
-      font-family:var(--font-family-000);
-    }
-    .radio_label_sied:hover{
-      cursor:pointer;
-      accent-color: var(--main-color);
-    }
-    .radio_sied:checked {
-      accent-color: var(--main-color);
-    }
+  /* Radio Box [start] */
+  .radio_label_sied{
+    color:var(--text-color-000);
+    font-size:var(--font-size-000);
+    font-weight:600;
+    font-family:var(--font-family-000);
+  }
+  .radio_label_sied:hover{
+    cursor:pointer;
+    accent-color: var(--main-color);
+  }
+  .radio_sied:checked {
+    accent-color: var(--main-color);
+  }
 
-    .radio_toolbar_sied input[type="radio"] {
-      display: none;
-    }
+  .radio_toolbar_sied input[type="radio"] {
+    display: none;
+  }
 
-    .radio_toolbar_item_sied{
-      display:inline-block;
-      padding:5px 0px;
-    }
+  .radio_toolbar_item_sied{
+    display:inline-block;
+    padding:5px 0px;
+  }
 
-    .radio_toolbar_sied label {
-      background-color: var(--backg-color-000);
-      color:var(--text-color-000);
-      font-size:var(--font-size-000);
-      font-family:var(--font-family-000);
-      padding:6px 12px;
-      cursor: pointer;
-      font-weight:600;
-      border:2px solid var(--border-color-000);
-      display:inline-block;
-    }
+  .radio_toolbar_sied label {
+    background-color: var(--backg-color-000);
+    color:var(--text-color-000);
+    font-size:var(--font-size-000);
+    font-family:var(--font-family-000);
+    padding:6px 12px;
+    cursor: pointer;
+    font-weight:600;
+    border:2px solid var(--border-color-000);
+    display:inline-block;
+  }
 
-    .radio_toolbar_sied input[type="radio"]:checked+label {
-      background-color: var(--backg-color-000-hover);
-      color:var(--text-color-000-hover);
-    }
-    /* Radio Box [end  ] */
-  </style>
-  <style>
-    /* Admin panel layout */
-    body {
-      margin: 0;
-      font-family: var(--font-family-000);
-      background: #f7f7f7;
-    }
-    .admin-container {
-      display: flex;
-      min-height: 100vh;
-    }
-    .sidebar {
-      width: 220px;
-      background: var(--main-color);
-      color: var(--main-color-hover);
-      padding: 0;
-      display: flex;
-      flex-direction: column;
-    }
-    .sidebar h2 {
-      color: var(--main-color-hover);
-      text-align: center;
-      margin: 24px 0 16px 0;
-      font-size: 1.5em;
-      letter-spacing: 1px;
-    }
-    .sidebar nav {
-      flex: 1;
-    }
-    .sidebar nav button {
-      width: 100%;
-      background: none;
-      border: none;
-      color: var(--main-color-hover);
-      font-size: 1em;
-      padding: 16px 0;
-      text-align: left;
-      padding-left: 32px;
-      cursor: pointer;
-      transition: background 0.2s;
-    }
-    .sidebar nav button.active, .sidebar nav button:hover {
-      background: var(--backg-color-hover);
-      color: var(--main-color);
-    }
-    .main-content {
-      flex: 1;
-      padding: 32px 48px;
-      background: #fff;
-      min-height: 100vh;
-    }
-    .section {
-      display: none;
-    }
-    .section.active {
-      display: block;
-    }
-    .user-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-bottom: 32px;
-    }
-    .user-table th, .user-table td {
-      border: 1px solid #ddd;
-      padding: 10px 12px;
-      text-align: left;
-    }
-    .user-table th {
-      background: #f0f0f0;
-    }
-    .action-btns button {
-      margin-right: 8px;
-    }
-    .form-row {
-      margin-bottom: 16px;
-    }
-    .form-row label {
-      display: block;
-      margin-bottom: 4px;
-      font-weight: 600;
-    }
-    .form-actions {
-      margin-top: 16px;
-    }
-    @media (max-width: 700px) {
-      .admin-container { flex-direction: column; }
-      .sidebar { width: 100%; flex-direction: row; }
-      .sidebar nav button { padding: 12px; font-size: 0.95em; padding-left: 12px; }
-      .main-content { padding: 16px; }
-    }
-  </style>
-</head>
-<body>
-  <div class="admin-container">
-    <aside class="sidebar">
-      <h2>Admin Panel</h2>
-      <nav>
-        <button class="active" data-section="dashboard">Dashboard</button>
-        <button data-section="users">Users</button>
-        <button data-section="settings">Settings</button>
-      </nav>
-    </aside>
-    <main class="main-content">
-      <!-- Dashboard Section -->
-      <section id="dashboard" class="section active">
-        <h1>Dashboard</h1>
-        <p>Welcome to the admin panel. Use the sidebar to manage users and settings.</p>
-      </section>
-      <!-- Users Section -->
-      <section id="users" class="section">
-        <h1>User Management</h1>
-        <table class="user-table">
-          <thead>
-            <tr>
-              <th>ID</th>
-              <th>Name</th>
-              <th>Email</th>
-              <th>Role</th>
-              <th>Actions</th>
-            </tr>
-          </thead>
-          <tbody id="userTableBody">
-            <!-- Populated by JS -->
-          </tbody>
-        </table>
-        <h2>Add / Edit User</h2>
-        <form id="userForm">
-          <input type="hidden" id="userId" value="">
-          <div class="form-row">
-            <label for="userName">Name</label>
-            <input type="text" id="userName" class="textbox_001_sied" required>
-          </div>
-          <div class="form-row">
-            <label for="userEmail">Email</label>
-            <input type="email" id="userEmail" class="textbox_001_sied" required>
-          </div>
-          <div class="form-row">
-            <label for="userRole">Role</label>
-            <select id="userRole" class="select_so_001_sied" required>
-              <option value="">Select role</option>
-              <option value="admin">Admin</option>
-              <option value="editor">Editor</option>
-              <option value="viewer">Viewer</option>
-            </select>
-          </div>
-          <div class="form-actions">
-            <button type="submit" class="btn_sied">Save User</button>
-            <button type="button" class="btn_sied" id="cancelEdit" style="display:none;">Cancel</button>
-          </div>
-        </form>
-      </section>
-      <!-- Settings Section -->
-      <section id="settings" class="section">
-        <h1>Settings</h1>
-        <form>
-          <div class="form-row">
-            <label>Theme</label>
-            <div class="radio_toolbar_sied">
-              <div class="radio_toolbar_item_sied">
-                <input id="theme_light" name="theme" value="light" type="radio" checked>
-                <label for="theme_light">Light</label>
-              </div>
-              <div class="radio_toolbar_item_sied">
-                <input id="theme_dark" name="theme" value="dark" type="radio">
-                <label for="theme_dark">Dark</label>
-              </div>
-            </div>
-          </div>
-          <div class="form-row">
-            <label>Notifications</label>
-            <div class="checkbox_toolbar_sied">
-              <div class="checkbox_toolbar_item_sied">
-                <input id="notif_email" name="notif" value="email" type="checkbox" checked>
-                <label for="notif_email">Email</label>
-              </div>
-              <div class="checkbox_toolbar_item_sied">
-                <input id="notif_sms" name="notif" value="sms" type="checkbox">
-                <label for="notif_sms">SMS</label>
-              </div>
-            </div>
-          </div>
-          <div class="form-row">
-            <label for="language">Language</label>
-            <select id="language" class="select_so_001_sied">
-              <option value="en">English</option>
-              <option value="ms">Malay</option>
-              <option value="id">Indonesian</option>
-            </select>
-          </div>
-          <div class="form-actions">
-            <button type="submit" class="btn_sied">Save Settings</button>
-          </div>
-        </form>
-      </section>
-    </main>
+  .radio_toolbar_sied input[type="radio"]:checked+label {
+    background-color: var(--backg-color-000-hover);
+    color:var(--text-color-000-hover);
+  }
+  /* Radio Box [end  ] */
+  /* Checkbox [start] */
+  .checkbox_label_sied{
+    color:var(--text-color-000);
+    font-size:var(--font-size-000);
+    font-weight:600;
+    font-family:var(--font-family-000);
+  }
+  .checkbox_label_sied:hover{
+    cursor:pointer;
+    accent-color: var(--main-color);
+  }
+  .checkbox_sied:checked {
+    accent-color: var(--main-color);
+  }
+
+
+
+  .checkbox_toolbar_sied input[type="checkbox"] {
+    display: none;
+  }
+
+  .checkbox_toolbar_item_sied{
+    display:inline-block;
+    padding: 5px 0px;
+  }
+
+  .checkbox_toolbar_sied label {
+    background-color: var(--backg-color-000);
+    color:var(--text-color-000);
+    font-size:var(--font-size-000);
+    font-family:var(--font-family-000);
+    padding:6px 12px;
+    cursor: pointer;
+    font-weight:600;
+    border:2px solid var(--border-color-000);
+    display:inline-block;
+  }
+
+  .checkbox_toolbar_sied input[type="checkbox"]:checked+label {
+    background-color: var(--backg-color-000-hover);
+    color:var(--text-color-000-hover);
+  }
+  /* Checkbox [end  ] */
+  /* Textbox [start] */
+  .textbox_001_sied{
+    background-color: var(--backg-color-000);
+    color:var(--text-color-000);
+    font-size:var(--font-size-000);
+    font-family:var(--font-family-000);
+    padding:6px 6px;
+    border: 2px solid var(--border-color-000);
+    margin:5px 0px;
+  }
+
+  .textbox_001_sied.error{
+    border: 3px solid var(--border-color-error-000);
+    padding: 4.4px 4.4px;/*0.8px = 1px*/
+  }
+
+  .textbox_001_sied.warning{
+    border: 3px solid var(--border-color-warning-000);
+    padding: 4.4px 4.4px;/*0.8px = 1px*/
+  }
+
+  .textbox_001_sied.success{
+    border: 3px solid var(--border-color-success-000);
+    padding: 4.4px 4.4px;/*0.8px = 1px*/
+  }
+
+  .textbox_001_sied:focus{
+    border: 3px solid var(--border-color-000);
+    padding: 5.2px 5.2px;/*0.8px = 1px*/
+    outline: none;
+  }
+
+  .textbox_001_sied.error:focus{
+    border: 3px solid var(--border-color-error-000) !important;
+    padding: 4.4px 4.4px;/*0.8px = 1px*/
+    outline: none;
+  }
+
+  .textbox_001_sied.warning:focus{
+    border: 3px solid var(--border-color-warning-000) !important;
+    padding: 4.4px 4.4px;/*0.8px = 1px*/
+    outline: none;
+  }
+
+  .textbox_001_sied.success:focus{
+    border: 3px solid var(--border-color-success-000) !important;
+    padding: 4.4px 4.4px;/*0.8px = 1px*/
+    outline: none;
+  }
+
+  .textbox_002_sied{
+    background-color: var(--backg-color-000);
+    color:var(--text-color-000);
+    font-size:var(--font-size-000);
+    font-family:var(--font-family-000);
+    border: 1px solid var(--border-color-000);
+    padding:10px 6px;
+  }
+
+  .textbox_002_sied.error{
+    border: 3px solid var(--border-color-error-000) !important;
+    padding: 8.4px 4.4px;/*0.8px = 1px*/
+    outline: none;
+  }
+
+  .textbox_002_sied.warning{
+    border: 3px solid var(--border-color-warning-000) !important;
+    padding: 8.4px 4.4px;/*0.8px = 1px*/
+    outline: none;
+  }
+
+  .textbox_002_sied.success{
+    border: 3px solid var(--border-color-success-000) !important;
+    padding: 8.4px 4.4px;/*0.8px = 1px*/
+    outline: none;
+  }
+
+  .textbox_002_sied:focus{
+    border: 3px solid var(--border-color-000);
+    padding: 8.4px 4.4px;
+  }
+
+  .textbox_002_sied.error:focus{
+    border: 3px solid var(--border-color-error-000) !important;
+    padding: 8.4px 4.4px;/*0.8px = 1px*/
+    outline: none;
+  }
+
+  .textbox_002_sied.warning:focus{
+    border: 3px solid var(--border-color-warning-000) !important;
+    padding: 8.4px 4.4px;/*0.8px = 1px*/
+    outline: none;
+  }
+
+  .textbox_002_sied.success:focus{
+    border: 3px solid var(--border-color-success-000) !important;
+    padding: 8.4px 4.4px;/*0.8px = 1px*/
+    outline: none;
+  }
+  /* Textbox [end  ] */
+  /* Textarea [start] */
+  .textarea_001_sied{
+    background-color: var(--backg-color-000);
+    color:var(--text-color-000);
+    font-size:var(--font-size-000);
+    font-family:var(--font-family-000);
+    border: 2px solid var(--border-color-000);
+    padding:8px 8px;
+    box-sizing: border-box;
+  }
+  .textarea_001_sied:focus{
+    border: 3px solid var(--border-color-000);
+    padding:7.2px 7.2px;
+  }
+  /* Textarea [end  ] */
+
+  /* Select Option [start] */
+  .label_so_001_sied{
+    color: var(--text-color-000);
+    font-size: var(--font-size-000);
+    font-weight: 600;
+    font-family: var(--font-family-000);
+  }
+  .select_so_001_sied{
+    background-color: var(--backg-color-000);
+    color:var(--text-color-000);
+    font-size:var(--font-size-000);
+    font-family:var(--font-family-000);
+    border: 2px solid var(--border-color-000);
+    padding: 6px 6px;
+    font-weight: 600;
+  }
+  /* Select Option [end  ] */
+
+
+  /* Form Input Type Text with Data Selection [start] */
+  .datalist_sied_001 {
+    position: absolute;
+    max-height: 200px;
+    border: 2px solid black;
+    overflow-x: hidden;
+    overflow-y: auto;
+    box-sizing: border-box;
+  }
+
+  .datalist_sied_001 option {
+    font-size: 15px;
+    padding: 5px 5px;
+    background-color: #fff;
+    cursor: pointer;
+  }
+
+  .datalist_sied_001 option:hover, .datalist_sied_001 option:focus {
+    color: #fff;
+    background-color: #000;
+    outline: 0;
+  }
+  /* Form Input Type Text with Data Selection [end  ] */
+
+</style>
+<pre>
+******************************* Button [start] *******************************
+</pre>
+<input type="button" value="Button" class="btn_sied">
+<pre>
+******************************* Button [end  ] *******************************
+</pre>
+<br>
+<br>
+<br>
+<pre>
+******************************* Radio [start] *******************************
+</pre>
+<input id="html" name="code_languuage" value="HTML" type="radio" class="radio_sied">
+<label for="html" class="radio_label_sied">HTML</label>
+<br>
+<input id="css" name="code_languuage" value="CSS" type="radio" class="radio_sied">
+<label for="css" class="radio_label_sied">CSS</label>
+<br>
+<input id="javascript" name="code_languuage" value="JavaScript" type="radio" class="radio_sied">
+<label for="javascript" class="radio_label_sied">JavaScript</label>
+
+<br>
+<br>
+<div class="radio_toolbar_sied">
+  <div class="radio_toolbar_item_sied">
+    <input id="type001" name="radio_toolbar" value="type001" type="radio" checked>
+    <label for="type001">Type 001</label>
   </div>
-  <script>
-    // Sidebar navigation logic
-    document.querySelectorAll('.sidebar nav button').forEach(btn => {
-      btn.addEventListener('click', function() {
-        document.querySelectorAll('.sidebar nav button').forEach(b => b.classList.remove('active'));
-        this.classList.add('active');
-        document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
-        document.getElementById(this.dataset.section).classList.add('active');
-      });
-    });
+  <div class="radio_toolbar_item_sied">
+    <input id="type002" name="radio_toolbar" value="type002" type="radio">
+    <label for="type002">Type 002</label>
+  </div>
+  <div class="radio_toolbar_item_sied">
+    <input id="type003" name="radio_toolbar" value="type003" type="radio">
+    <label for="type003">Type 003</label>
+  </div>
+</div>
 
-    // Sample user data
-    let users = [
-      {id: 1, name: 'Alice', email: 'alice@example.com', role: 'admin'},
-      {id: 2, name: 'Bob', email: 'bob@example.com', role: 'editor'},
-      {id: 3, name: 'Charlie', email: 'charlie@example.com', role: 'viewer'}
-    ];
-    let editingUserId = null;
+<pre>
+******************************* Radio [end  ] *******************************
+</pre>
+<br>
+<br>
+<br>
+<pre>
+******************************* Checkbox [start] *******************************
+</pre>
+<input id="english" name="display_language" value="english" type="checkbox" class="checkbox_sied">
+<label for="english" class="checkbox_label_sied">English</label>
+<br>
+<input id="malay" name="display_language" value="malay" type="checkbox" class="checkbox_sied">
+<label for="malay" class="checkbox_label_sied">Malay</label>
+<br>
+<input id="indonesia" name="display_language" value="indonesia" type="checkbox" class="checkbox_sied">
+<label for="indonesia" class="checkbox_label_sied">Indonesia</label>
 
-    function renderUserTable() {
-      const tbody = document.getElementById('userTableBody');
-      tbody.innerHTML = '';
-      users.forEach(user => {
-        const tr = document.createElement('tr');
-        tr.innerHTML = `
-          <td>${user.id}</td>
-          <td>${user.name}</td>
-          <td>${user.email}</td>
-          <td>${user.role.charAt(0).toUpperCase() + user.role.slice(1)}</td>
-          <td class="action-btns">
-            <button class="btn_sied" onclick="editUser(${user.id})">Edit</button>
-            <button class="btn_sied" onclick="deleteUser(${user.id})">Delete</button>
-          </td>
-        `;
-        tbody.appendChild(tr);
-      });
+<br>
+<br>
+<div class="checkbox_toolbar_sied">
+  <div class="checkbox_toolbar_item_sied">
+    <input id="langtype001" name="checkbox_toolbar" value="langtype001" type="checkbox">
+    <label for="langtype001">Language Type 001</label>
+  </div>
+  <div class="checkbox_toolbar_item_sied">
+    <input id="langtype002" name="checkbox_toolbar" value="langtype002" type="checkbox">
+    <label for="langtype002">Language Type 002</label>
+  </div>
+  <div class="checkbox_toolbar_item_sied">
+    <input id="langtype003" name="checkbox_toolbar" value="langtype003" type="checkbox">
+    <label for="langtype003">Language Type 003</label>
+  </div>
+</div>
+<pre>
+******************************* Checkbox [end  ] *******************************
+</pre>
+<br>
+<br>
+<br>
+<pre>
+******************************* Input Textbox [start] *******************************
+</pre>
+<input name="username" placeholder="Username" value="" type="text" class="textbox_001_sied">
+<input name="username" placeholder="Username" value="" type="text" class="textbox_001_sied error">
+<input name="username" placeholder="Username" value="" type="text" class="textbox_001_sied warning">
+<input name="username" placeholder="Username" value="" type="text" class="textbox_001_sied success">
+<input name="username" placeholder="Username" value="" type="text" class="textbox_002_sied">
+<input name="username" placeholder="Username" value="" type="text" class="textbox_002_sied error">
+<input name="username" placeholder="Username" value="" type="text" class="textbox_002_sied warning">
+<input name="username" placeholder="Username" value="" type="text" class="textbox_002_sied success">
+<pre>
+******************************* Input Textbox [end  ] *******************************
+</pre>
+<br>
+<br>
+<br>
+<pre>
+******************************* textarea [start] *******************************
+</pre>
+<textarea name="remark" placeholder="Remark" class="textarea_001_sied"></textarea>
+<textarea name="remark2" placeholder="Remark" class="textarea_001_sied" rows="8" style="width:100%;resize: none;"></textarea>
+
+<pre>
+******************************* textarea [end  ] *******************************
+</pre>
+<br>
+<br>
+<br>
+<pre>
+******************************* Select Option [start] *******************************
+</pre>
+<label for="fruit" class="label_so_001_sied">Choose a fruit:</label>
+<select name="fruit" id="fruit" class="select_so_001_sied">
+  <option value="apple">Apple</option>
+  <option value="banana">Banana</option>
+  <option value="cherry">Cherry</option>
+  <option value="date">Date</option>
+  <option value="elderberry">Elderberry</option>
+</select>
+<pre>
+******************************* Select Option [end  ] *******************************
+</pre>
+<br>
+<br>
+<br>
+<pre>
+******************************* Form Input Type Text with Data Selection [start] *******************************
+</pre>
+
+<input list="datalist_list_001" class="textbox_001_sied" type="text" placeholder="Please select or type a custom stock code" id="input_datalist_001" name="input_datalist_001" onblur="updateStockDetails(this)" autocomplete="off"/>
+<datalist id="datalist_list_001" class="datalist_sied_001">
+  <!-- Options will be populated by JavaScript .-->
+</datalist>
+<br>
+<input list="datalist_list_002" class="textbox_001_sied" type="text" placeholder="Please select or type a custom stock code" id="input_datalist_002" name="input_datalist_002" onblur="updateStockDetails(this)" autocomplete="off"/>
+<datalist id="datalist_list_002" class="datalist_sied_001">
+  <!-- Options will be populated by JavaScript -->
+</datalist>
+<br>
+<input list="datalist_list_003" class="textbox_001_sied" type="text" placeholder="Please select or type a custom stock code" id="input_datalist_003" name="input_datalist_003" onblur="updateStockDetails(this)" autocomplete="off"/>
+<datalist id="datalist_list_003" class="datalist_sied_001">
+  <!-- Options will be populated by JavaScript -->
+</datalist>
+
+<input type="text" id="stock_desc" name="stock_desc">
+<input type="text" id="stock_unique" name="stock_unique">
+<script>
+  var stockData = {
+    "AAPL": { "desc": "Apple Inc. - Technology", "unique": "NASDAQ: AAPL" },
+    "GOOGL": { "desc": "Alphabet Inc. - Technology", "unique": "NASDAQ: GOOGL" },
+    "MSFT": { "desc": "Microsoft Corporation - Technology", "unique": "NASDAQ: MSFT" },
+    "AMZN": { "desc": "Amazon.com, Inc. - Consumer Goods", "unique": "NASDAQ: AMZN" },
+    "FB": { "desc": "Meta Platforms Inc. - Communication Services", "unique": "NASDAQ: FB" },
+    "BRK.A": { "desc": "Berkshire Hathaway Inc. - Financial Services", "unique": "NYSE: BRK.A" },
+    "V": { "desc": "Visa Inc. - Financial Services", "unique": "NYSE: V" },
+    "JNJ": { "desc": "Johnson & Johnson - Healthcare", "unique": "NYSE: JNJ" },
+    "WMT": { "desc": "Walmart Inc. - Consumer Services", "unique": "NYSE: WMT" },
+    "PG": { "desc": "Procter & Gamble Co - Consumer Goods", "unique": "NYSE: PG" },
+    "TSLA": { "desc": "Tesla, Inc. - Automotive", "unique": "NASDAQ: TSLA" },
+    "MA": { "desc": "Mastercard Incorporated - Financial Services", "unique": "NYSE: MA" },
+    "NVDA": { "desc": "NVIDIA Corporation - Technology", "unique": "NASDAQ: NVDA" },
+    "HD": { "desc": "The Home Depot, Inc. - Consumer Services", "unique": "NYSE: HD" },
+    "DIS": { "desc": "The Walt Disney Company - Communication Services", "unique": "NYSE: DIS" },
+    "BAC": { "desc": "Bank of America Corporation - Financial Services", "unique": "NYSE: BAC" },
+    "VZ": { "desc": "Verizon Communications Inc. - Communication Services", "unique": "NYSE: VZ" },
+    "KO": { "desc": "The Coca-Cola Company - Consumer Goods", "unique": "NYSE: KO" },
+    "PFE": { "desc": "Pfizer Inc. - Healthcare", "unique": "NYSE: PFE" },
+    "NFLX": { "desc": "Netflix, Inc. - Communication Services", "unique": "NASDAQ: NFLX" },
+    "INTC": { "desc": "Intel Corporation - Technology", "unique": "NASDAQ: INTC" },
+    "CSCO": { "desc": "Cisco Systems, Inc. - Technology", "unique": "NASDAQ: CSCO" },
+    "T": { "desc": "AT&T Inc. - Communication Services", "unique": "NYSE: T" },
+    "MRK": { "desc": "Merck & Co., Inc. - Healthcare", "unique": "NYSE: MRK" },
+    "CMCSA": { "desc": "Comcast Corporation - Communication Services", "unique": "NASDAQ: CMCSA" },
+    "PEP": { "desc": "PepsiCo, Inc. - Consumer Goods", "unique": "NASDAQ: PEP" },
+    "XOM": { "desc": "Exxon Mobil Corporation - Energy", "unique": "NYSE: XOM" },
+    "ABT": { "desc": "Abbott Laboratories - Healthcare", "unique": "NYSE: ABT" },
+    "WFC": { "desc": "Wells Fargo & Company - Financial Services", "unique": "NYSE: WFC" },
+    "ACN": { "desc": "Accenture plc - Information Technology Services", "unique": "NYSE: ACN" },
+    "ATVI": { "desc": "Activision Blizzard, Inc. - Communication Services", "unique": "NASDAQ: ATVI" },
+    "CRM": { "desc": "Salesforce.com, inc. - Technology", "unique": "NYSE: CRM" },
+    "MDT": { "desc": "Medtronic plc - Healthcare", "unique": "NYSE: MDT" },
+    "ORCL": { "desc": "Oracle Corporation - Technology", "unique": "NYSE: ORCL" },
+    "BA": { "desc": "The Boeing Company - Industrials", "unique": "NYSE: BA" },
+    "COST": { "desc": "Costco Wholesale Corporation - Consumer Services", "unique": "NASDAQ: COST" },
+    "CVX": { "desc": "Chevron Corporation - Energy", "unique": "NYSE: CVX" },
+    "LMT": { "desc": "Lockheed Martin Corporation - Industrials", "unique": "NYSE: LMT" },
+    "MCD": { "desc": "McDonald's Corporation - Consumer Services", "unique": "NYSE: MCD" },
+    "DHR": { "desc": "Danaher Corporation - Industrials", "unique": "NYSE: DHR" },
+    "HON": { "desc": "Honeywell International Inc. - Industrials", "unique": "NYSE: HON" },
+    "UPS": { "desc": "United Parcel Service, Inc. - Industrials", "unique": "NYSE: UPS" },
+    "IBM": { "desc": "International Business Machines Corporation - Technology", "unique": "NYSE: IBM" },
+    "C": { "desc": "Citigroup Inc. - Financial Services", "unique": "NYSE: C" },
+    "MMM": { "desc": "3M Company - Industrials", "unique": "NYSE: MMM" },
+    "GE": { "desc": "General Electric Company - Industrials", "unique": "NYSE: GE" },
+    // Additional examples:
+    "QCOM": { "desc": "QUALCOMM Incorporated - Technology", "unique": "NASDAQ: QCOM" },
+    "AABA": { "desc": "Altaba Inc. - Financial Services", "unique": "NASDAQ: AABA" },
+    "TXN": { "desc": "Texas Instruments Incorporated - Technology", "unique": "NASDAQ: TXN" },
+    "NKE": { "desc": "Nike, Inc. - Consumer Goods", "unique": "NYSE: NKE" },
+    "LLY": { "desc": "Eli Lilly and Company - Healthcare", "unique": "NYSE: LLY" }
+  };
+
+  function updateStockDetails(stockCodeInput) {
+    var stock_desc = document.getElementById('stock_desc');
+    var stock_unique = document.getElementById('stock_unique');
+
+    var data = stockData[stockCodeInput.value];
+    console.log(stockCodeInput.value);
+    if (data) {
+      stock_desc.value = data.desc;
+      stock_unique.value = data.unique;
+    } else {
+      stock_desc.value = '';
+      stock_unique.value = '';
     }
+  }
 
-    function editUser(id) {
-      const user = users.find(u => u.id === id);
-      if (user) {
-        document.getElementById('userId').value = user.id;
-        document.getElementById('userName').value = user.name;
-        document.getElementById('userEmail').value = user.email;
-        document.getElementById('userRole').value = user.role;
-        document.getElementById('cancelEdit').style.display = '';
-      }
-    }
-
-    function deleteUser(id) {
-      if (confirm('Delete this user?')) {
-        users = users.filter(u => u.id !== id);
-        renderUserTable();
-        document.getElementById('userForm').reset();
-        document.getElementById('cancelEdit').style.display = 'none';
-      }
-    }
-
-    document.getElementById('userForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      const id = document.getElementById('userId').value;
-      const name = document.getElementById('userName').value.trim();
-      const email = document.getElementById('userEmail').value.trim();
-      const role = document.getElementById('userRole').value;
-      if (!name || !email || !role) {
-        alert('All fields are required.');
-        return;
-      }
-      if (id) {
-        // Edit existing
-        const user = users.find(u => u.id == id);
-        if (user) {
-          user.name = name;
-          user.email = email;
-          user.role = role;
-        }
-      } else {
-        // Add new
-        const newId = users.length ? Math.max(...users.map(u => u.id)) + 1 : 1;
-        users.push({id: newId, name, email, role});
-      }
-      renderUserTable();
-      this.reset();
-      document.getElementById('userId').value = '';
-      document.getElementById('cancelEdit').style.display = 'none';
+  document.addEventListener('DOMContentLoaded', function() {
+    var dataList1 = document.getElementById('datalist_list_001');
+    var dataList2 = document.getElementById('datalist_list_002');
+    var dataList3 = document.getElementById('datalist_list_003');
+    console.log(dataList1);
+    console.log(dataList2);
+    console.log(dataList3);
+    Object.keys(stockData).forEach(function(code) {
+      var option = document.createElement('option');
+      option.value = code;
+      option.textContent = stockData[code].desc; // or any other property
+      dataList1.appendChild(option);
     });
-    document.getElementById('cancelEdit').addEventListener('click', function() {
-      document.getElementById('userForm').reset();
-      document.getElementById('userId').value = '';
-      this.style.display = 'none';
+    Object.keys(stockData).forEach(function(code) {
+      var option = document.createElement('option');
+      option.value = code;
+      option.textContent = stockData[code].desc; // or any other property
+      dataList2.appendChild(option);
     });
-    // Expose editUser/deleteUser to global for inline onclick
-    window.editUser = editUser;
-    window.deleteUser = deleteUser;
-    // Initial render
-    renderUserTable();
-  </script>
-</body>
-</html>
+    Object.keys(stockData).forEach(function(code) {
+      var option = document.createElement('option');
+      option.value = code;
+      option.textContent = stockData[code].desc; // or any other property
+      dataList3.appendChild(option);
+    });
+  });
+</script>
+
+<pre>
+******************************* Form Input Type Text with Data Selection [end  ] *******************************
+</pre>
+<br>
+<br>
+<br>
+<pre>
+******************************* Font Size [start] *******************************
+</pre>
+<span class="font_sied_m_010">Sample font size display for --font-size-m-010</span>
+<br>
+<span class="font_sied_m_009">Sample font size display for --font-size-m-009</span>
+<br>
+<span class="font_sied_m_008">Sample font size display for --font-size-m-008</span>
+<br>
+<span class="font_sied_m_007">Sample font size display for --font-size-m-007</span>
+<br>
+<span class="font_sied_m_006">Sample font size display for --font-size-m-006</span>
+<br>
+<span class="font_sied_m_005">Sample font size display for --font-size-m-005</span>
+<br>
+<span class="font_sied_m_004">Sample font size display for --font-size-m-004</span>
+<br>
+<span class="font_sied_m_003">Sample font size display for --font-size-m-003</span>
+<br>
+<span class="font_sied_m_002">Sample font size display for --font-size-m-002</span>
+<br>
+<span class="font_sied_m_001">Sample font size display for --font-size-m-001</span>
+<br>
+<span class="font_sied_000">Sample font size display for --font-size-000</span>
+<br>
+<span class="font_sied_p_001">Sample font size display for --font-size-p-001</span>
+<br>
+<span class="font_sied_p_002">Sample font size display for --font-size-p-002</span>
+<br>
+<span class="font_sied_p_003">Sample font size display for --font-size-p-003</span>
+<br>
+<span class="font_sied_p_004">Sample font size display for --font-size-p-004</span>
+<br>
+<span class="font_sied_p_005">Sample font size display for --font-size-p-005</span>
+<br>
+<span class="font_sied_p_006">Sample font size display for --font-size-p-006</span>
+<br>
+<span class="font_sied_p_007">Sample font size display for --font-size-p-007</span>
+<br>
+<span class="font_sied_p_008">Sample font size display for --font-size-p-008</span>
+<br>
+<span class="font_sied_p_009">Sample font size display for --font-size-p-009</span>
+<br>
+<span class="font_sied_p_010">Sample font size display for --font-size-p-010</span>
+
+<pre>
+******************************* Font Size [end  ] *******************************
+</pre>
