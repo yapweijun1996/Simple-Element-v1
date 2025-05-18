@@ -30,307 +30,64 @@
         <h1>Admin Panel</h1>
       </header>
       <div class="admin-content">
-        <link rel="stylesheet" href="simple-elements.css">
-<pre>
-******************************* Button [start] *******************************
-</pre>
-<input type="button" value="Button" class="btn_sied">
-<pre>
-******************************* Button [end  ] *******************************
-</pre>
-<br>
-<br>
-<br>
-<pre>
-******************************* Radio [start] *******************************
-</pre>
-<input id="html" name="code_languuage" value="HTML" type="radio" class="radio_sied">
-<label for="html" class="radio_label_sied">HTML</label>
-<br>
-<input id="css" name="code_languuage" value="CSS" type="radio" class="radio_sied">
-<label for="css" class="radio_label_sied">CSS</label>
-<br>
-<input id="javascript" name="code_languuage" value="JavaScript" type="radio" class="radio_sied">
-<label for="javascript" class="radio_label_sied">JavaScript</label>
-
-<br>
-<br>
-<div class="radio_toolbar_sied">
-  <div class="radio_toolbar_item_sied">
-    <input id="type001" name="radio_toolbar" value="type001" type="radio" checked>
-    <label for="type001">Type 001</label>
-  </div>
-  <div class="radio_toolbar_item_sied">
-    <input id="type002" name="radio_toolbar" value="type002" type="radio">
-    <label for="type002">Type 002</label>
-  </div>
-  <div class="radio_toolbar_item_sied">
-    <input id="type003" name="radio_toolbar" value="type003" type="radio">
-    <label for="type003">Type 003</label>
-  </div>
-</div>
-
-<pre>
-******************************* Radio [end  ] *******************************
-</pre>
-<br>
-<br>
-<br>
-<pre>
-******************************* Checkbox [start] *******************************
-</pre>
-<input id="english" name="display_language" value="english" type="checkbox" class="checkbox_sied">
-<label for="english" class="checkbox_label_sied">English</label>
-<br>
-<input id="malay" name="display_language" value="malay" type="checkbox" class="checkbox_sied">
-<label for="malay" class="checkbox_label_sied">Malay</label>
-<br>
-<input id="indonesia" name="display_language" value="indonesia" type="checkbox" class="checkbox_sied">
-<label for="indonesia" class="checkbox_label_sied">Indonesia</label>
-
-<br>
-<br>
-<div class="checkbox_toolbar_sied">
-  <div class="checkbox_toolbar_item_sied">
-    <input id="langtype001" name="checkbox_toolbar" value="langtype001" type="checkbox">
-    <label for="langtype001">Language Type 001</label>
-  </div>
-  <div class="checkbox_toolbar_item_sied">
-    <input id="langtype002" name="checkbox_toolbar" value="langtype002" type="checkbox">
-    <label for="langtype002">Language Type 002</label>
-  </div>
-  <div class="checkbox_toolbar_item_sied">
-    <input id="langtype003" name="checkbox_toolbar" value="langtype003" type="checkbox">
-    <label for="langtype003">Language Type 003</label>
-  </div>
-</div>
-<pre>
-******************************* Checkbox [end  ] *******************************
-</pre>
-<br>
-<br>
-<br>
-<pre>
-******************************* Input Textbox [start] *******************************
-</pre>
-        <input name="username" placeholder="Username" value="" type="text" class="textbox_001_sied">
-        <input name="username" placeholder="Username" value="" type="text" class="textbox_001_sied error">
-        <input name="username" placeholder="Username" value="" type="text" class="textbox_001_sied warning">
-        <input name="username" placeholder="Username" value="" type="text" class="textbox_001_sied success">
-        <input name="username" placeholder="Username" value="" type="text" class="textbox_002_sied">
-        <input name="username" placeholder="Username" value="" type="text" class="textbox_002_sied error">
-        <input name="username" placeholder="Username" value="" type="text" class="textbox_002_sied warning">
-        <input name="username" placeholder="Username" value="" type="text" class="textbox_002_sied success">
-<pre>
-******************************* Input Textbox [end  ] *******************************
-</pre>
-<br>
-<br>
-<br>
-<pre>
-******************************* textarea [start] *******************************
-</pre>
-<textarea name="remark" placeholder="Remark" class="textarea_001_sied"></textarea>
-<textarea name="remark2" placeholder="Remark" class="textarea_001_sied" rows="8" style="width:100%;resize: none;"></textarea>
-
-<pre>
-******************************* textarea [end  ] *******************************
-</pre>
-<br>
-<br>
-<br>
-<pre>
-******************************* Select Option [start] *******************************
-</pre>
-<label for="fruit" class="label_so_001_sied">Choose a fruit:</label>
-<select name="fruit" id="fruit" class="select_so_001_sied">
-  <option value="apple">Apple</option>
-  <option value="banana">Banana</option>
-  <option value="cherry">Cherry</option>
-  <option value="date">Date</option>
-  <option value="elderberry">Elderberry</option>
-</select>
-<pre>
-******************************* Select Option [end  ] *******************************
-</pre>
-<br>
-<br>
-<br>
-<pre>
-******************************* Form Input Type Text with Data Selection [start] *******************************
-</pre>
-
-<input list="datalist_list_001" class="textbox_001_sied" type="text" placeholder="Please select or type a custom stock code" id="input_datalist_001" name="input_datalist_001" onblur="updateStockDetails(this)" autocomplete="off"/>
-<datalist id="datalist_list_001" class="datalist_sied_001">
-  <!-- Options will be populated by JavaScript .-->
-</datalist>
-<br>
-<input list="datalist_list_002" class="textbox_001_sied" type="text" placeholder="Please select or type a custom stock code" id="input_datalist_002" name="input_datalist_002" onblur="updateStockDetails(this)" autocomplete="off"/>
-<datalist id="datalist_list_002" class="datalist_sied_001">
-  <!-- Options will be populated by JavaScript -->
-</datalist>
-<br>
-<input list="datalist_list_003" class="textbox_001_sied" type="text" placeholder="Please select or type a custom stock code" id="input_datalist_003" name="input_datalist_003" onblur="updateStockDetails(this)" autocomplete="off"/>
-<datalist id="datalist_list_003" class="datalist_sied_001">
-  <!-- Options will be populated by JavaScript -->
-</datalist>
-
-<input type="text" id="stock_desc" name="stock_desc">
-<input type="text" id="stock_unique" name="stock_unique">
-<script>
-  var stockData = {
-    "AAPL": { "desc": "Apple Inc. - Technology", "unique": "NASDAQ: AAPL" },
-    "GOOGL": { "desc": "Alphabet Inc. - Technology", "unique": "NASDAQ: GOOGL" },
-    "MSFT": { "desc": "Microsoft Corporation - Technology", "unique": "NASDAQ: MSFT" },
-    "AMZN": { "desc": "Amazon.com, Inc. - Consumer Goods", "unique": "NASDAQ: AMZN" },
-    "FB": { "desc": "Meta Platforms Inc. - Communication Services", "unique": "NASDAQ: FB" },
-    "BRK.A": { "desc": "Berkshire Hathaway Inc. - Financial Services", "unique": "NYSE: BRK.A" },
-    "V": { "desc": "Visa Inc. - Financial Services", "unique": "NYSE: V" },
-    "JNJ": { "desc": "Johnson & Johnson - Healthcare", "unique": "NYSE: JNJ" },
-    "WMT": { "desc": "Walmart Inc. - Consumer Services", "unique": "NYSE: WMT" },
-    "PG": { "desc": "Procter & Gamble Co - Consumer Goods", "unique": "NYSE: PG" },
-    "TSLA": { "desc": "Tesla, Inc. - Automotive", "unique": "NASDAQ: TSLA" },
-    "MA": { "desc": "Mastercard Incorporated - Financial Services", "unique": "NYSE: MA" },
-    "NVDA": { "desc": "NVIDIA Corporation - Technology", "unique": "NASDAQ: NVDA" },
-    "HD": { "desc": "The Home Depot, Inc. - Consumer Services", "unique": "NYSE: HD" },
-    "DIS": { "desc": "The Walt Disney Company - Communication Services", "unique": "NYSE: DIS" },
-    "BAC": { "desc": "Bank of America Corporation - Financial Services", "unique": "NYSE: BAC" },
-    "VZ": { "desc": "Verizon Communications Inc. - Communication Services", "unique": "NYSE: VZ" },
-    "KO": { "desc": "The Coca-Cola Company - Consumer Goods", "unique": "NYSE: KO" },
-    "PFE": { "desc": "Pfizer Inc. - Healthcare", "unique": "NYSE: PFE" },
-    "NFLX": { "desc": "Netflix, Inc. - Communication Services", "unique": "NASDAQ: NFLX" },
-    "INTC": { "desc": "Intel Corporation - Technology", "unique": "NASDAQ: INTC" },
-    "CSCO": { "desc": "Cisco Systems, Inc. - Technology", "unique": "NASDAQ: CSCO" },
-    "T": { "desc": "AT&T Inc. - Communication Services", "unique": "NYSE: T" },
-    "MRK": { "desc": "Merck & Co., Inc. - Healthcare", "unique": "NYSE: MRK" },
-    "CMCSA": { "desc": "Comcast Corporation - Communication Services", "unique": "NASDAQ: CMCSA" },
-    "PEP": { "desc": "PepsiCo, Inc. - Consumer Goods", "unique": "NASDAQ: PEP" },
-    "XOM": { "desc": "Exxon Mobil Corporation - Energy", "unique": "NYSE: XOM" },
-    "ABT": { "desc": "Abbott Laboratories - Healthcare", "unique": "NYSE: ABT" },
-    "WFC": { "desc": "Wells Fargo & Company - Financial Services", "unique": "NYSE: WFC" },
-    "ACN": { "desc": "Accenture plc - Information Technology Services", "unique": "NYSE: ACN" },
-    "ATVI": { "desc": "Activision Blizzard, Inc. - Communication Services", "unique": "NASDAQ: ATVI" },
-    "CRM": { "desc": "Salesforce.com, inc. - Technology", "unique": "NYSE: CRM" },
-    "MDT": { "desc": "Medtronic plc - Healthcare", "unique": "NYSE: MDT" },
-    "ORCL": { "desc": "Oracle Corporation - Technology", "unique": "NYSE: ORCL" },
-    "BA": { "desc": "The Boeing Company - Industrials", "unique": "NYSE: BA" },
-    "COST": { "desc": "Costco Wholesale Corporation - Consumer Services", "unique": "NASDAQ: COST" },
-    "CVX": { "desc": "Chevron Corporation - Energy", "unique": "NYSE: CVX" },
-    "LMT": { "desc": "Lockheed Martin Corporation - Industrials", "unique": "NYSE: LMT" },
-    "MCD": { "desc": "McDonald's Corporation - Consumer Services", "unique": "NYSE: MCD" },
-    "DHR": { "desc": "Danaher Corporation - Industrials", "unique": "NYSE: DHR" },
-    "HON": { "desc": "Honeywell International Inc. - Industrials", "unique": "NYSE: HON" },
-    "UPS": { "desc": "United Parcel Service, Inc. - Industrials", "unique": "NYSE: UPS" },
-    "IBM": { "desc": "International Business Machines Corporation - Technology", "unique": "NYSE: IBM" },
-    "C": { "desc": "Citigroup Inc. - Financial Services", "unique": "NYSE: C" },
-    "MMM": { "desc": "3M Company - Industrials", "unique": "NYSE: MMM" },
-    "GE": { "desc": "General Electric Company - Industrials", "unique": "NYSE: GE" },
-    // Additional examples:
-    "QCOM": { "desc": "QUALCOMM Incorporated - Technology", "unique": "NASDAQ: QCOM" },
-    "AABA": { "desc": "Altaba Inc. - Financial Services", "unique": "NASDAQ: AABA" },
-    "TXN": { "desc": "Texas Instruments Incorporated - Technology", "unique": "NASDAQ: TXN" },
-    "NKE": { "desc": "Nike, Inc. - Consumer Goods", "unique": "NYSE: NKE" },
-    "LLY": { "desc": "Eli Lilly and Company - Healthcare", "unique": "NYSE: LLY" }
-  };
-
-  function updateStockDetails(stockCodeInput) {
-    var stock_desc = document.getElementById('stock_desc');
-    var stock_unique = document.getElementById('stock_unique');
-
-    var data = stockData[stockCodeInput.value];
-    console.log(stockCodeInput.value);
-    if (data) {
-      stock_desc.value = data.desc;
-      stock_unique.value = data.unique;
-    } else {
-      stock_desc.value = '';
-      stock_unique.value = '';
-    }
-  }
-
-  document.addEventListener('DOMContentLoaded', function() {
-    var dataList1 = document.getElementById('datalist_list_001');
-    var dataList2 = document.getElementById('datalist_list_002');
-    var dataList3 = document.getElementById('datalist_list_003');
-    console.log(dataList1);
-    console.log(dataList2);
-    console.log(dataList3);
-    Object.keys(stockData).forEach(function(code) {
-      var option = document.createElement('option');
-      option.value = code;
-      option.textContent = stockData[code].desc; // or any other property
-      dataList1.appendChild(option);
-    });
-    Object.keys(stockData).forEach(function(code) {
-      var option = document.createElement('option');
-      option.value = code;
-      option.textContent = stockData[code].desc; // or any other property
-      dataList2.appendChild(option);
-    });
-    Object.keys(stockData).forEach(function(code) {
-      var option = document.createElement('option');
-      option.value = code;
-      option.textContent = stockData[code].desc; // or any other property
-      dataList3.appendChild(option);
-    });
-  });
-</script>
-
-<pre>
-******************************* Form Input Type Text with Data Selection [end  ] *******************************
-</pre>
-<br>
-<br>
-<br>
-<pre>
-******************************* Font Size [start] *******************************
-</pre>
-        <span class="font_sied_m_010">Sample font size display for --font-size-m-010</span>
-<br>
-        <span class="font_sied_m_009">Sample font size display for --font-size-m-009</span>
-<br>
-        <span class="font_sied_m_008">Sample font size display for --font-size-m-008</span>
-<br>
-        <span class="font_sied_m_007">Sample font size display for --font-size-m-007</span>
-<br>
-        <span class="font_sied_m_006">Sample font size display for --font-size-m-006</span>
-<br>
-        <span class="font_sied_m_005">Sample font size display for --font-size-m-005</span>
-<br>
-        <span class="font_sied_m_004">Sample font size display for --font-size-m-004</span>
-<br>
-        <span class="font_sied_m_003">Sample font size display for --font-size-m-003</span>
-<br>
-        <span class="font_sied_m_002">Sample font size display for --font-size-m-002</span>
-<br>
-        <span class="font_sied_m_001">Sample font size display for --font-size-m-001</span>
-<br>
-        <span class="font_sied_000">Sample font size display for --font-size-000</span>
-<br>
-        <span class="font_sied_p_001">Sample font size display for --font-size-p-001</span>
-<br>
-        <span class="font_sied_p_002">Sample font size display for --font-size-p-002</span>
-<br>
-        <span class="font_sied_p_003">Sample font size display for --font-size-p-003</span>
-<br>
-        <span class="font_sied_p_004">Sample font size display for --font-size-p-004</span>
-<br>
-        <span class="font_sied_p_005">Sample font size display for --font-size-p-005</span>
-<br>
-        <span class="font_sied_p_006">Sample font size display for --font-size-p-006</span>
-<br>
-        <span class="font_sied_p_007">Sample font size display for --font-size-p-007</span>
-<br>
-        <span class="font_sied_p_008">Sample font size display for --font-size-p-008</span>
-<br>
-        <span class="font_sied_p_009">Sample font size display for --font-size-p-009</span>
-<br>
-        <span class="font_sied_p_010">Sample font size display for --font-size-p-010</span>
-
-<pre>
-******************************* Font Size [end  ] *******************************
-</pre>
+        <section id="content-dashboard" class="panel-content active">
+          <h2 class="font_sied_p_003">Dashboard</h2>
+          <input type="button" class="btn_sied" value="Add User">
+          <input type="button" class="btn_sied" value="Remove User">
+          <input type="button" class="btn_sied" value="Refresh">
+          <br><br>
+          <label class="label_so_001_sied">Filter by Role:</label>
+          <select class="select_so_001_sied">
+            <option>All</option><option>Admin</option><option>User</option>
+          </select>
+          <br><br>
+          <label class="label_so_001_sied">Search Users:</label>
+          <input list="user-list" class="textbox_001_sied" autocomplete="off">
+          <datalist id="user-list" class="datalist_sied_001">
+            <option value="alice"></option><option value="bob"></option>
+          </datalist>
+        </section>
+        <section id="content-users" class="panel-content">
+          <h2 class="font_sied_p_003">Users</h2>
+          <table>
+            <thead><tr><th><input type="checkbox" class="checkbox_sied"></th><th>Username</th><th>Active</th></tr></thead>
+            <tbody>
+              <tr><td><input type="checkbox" class="checkbox_sied"></td><td>alice</td><td><input type="radio" name="active-user" class="radio_sied"></td></tr>
+              <tr><td><input type="checkbox" class="checkbox_sied"></td><td>bob</td><td><input type="radio" name="active-user" class="radio_sied" checked></td></tr>
+            </tbody>
+          </table>
+        </section>
+        <section id="content-settings" class="panel-content">
+          <h2 class="font_sied_p_003">Settings</h2>
+          <form>
+            <label for="site-title" class="label_so_001_sied">Site Title</label><br>
+            <input type="text" id="site-title" class="textbox_001_sied" value="My Site"><br><br>
+            <label for="maintenance" class="label_so_001_sied">Maintenance Mode</label>
+            <input type="checkbox" id="maintenance" class="checkbox_sied"><br><br>
+            <label for="theme" class="label_so_001_sied">Theme</label><br>
+            <select id="theme" class="select_so_001_sied">
+              <option>Light</option><option>Dark</option>
+            </select><br><br>
+            <label for="admin-email" class="label_so_001_sied">Admin Email</label><br>
+            <input list="emails" class="textbox_001_sied" id="admin-email" autocomplete="off">
+            <datalist id="emails" class="datalist_sied_001">
+              <option value="admin@example.com"></option>
+              <option value="support@example.com"></option>
+            </datalist><br><br>
+            <label for="description" class="label_so_001_sied">Description</label><br>
+            <textarea id="description" class="textarea_001_sied" rows="4">Enter info...</textarea><br><br>
+            <input type="button" class="btn_sied" value="Save Settings">
+          </form>
+        </section>
       </div>
+      <script>
+        document.querySelectorAll('input[name="admin-menu"]').forEach(function(radio) {
+          radio.addEventListener('change', function() {
+            document.querySelectorAll('.panel-content').forEach(function(el) { el.classList.remove('active'); });
+            document.getElementById('content-' + radio.value).classList.add('active');
+          });
+        });
+      </script>
     </div>
   </div>
 </body>
