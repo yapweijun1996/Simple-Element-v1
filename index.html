@@ -64,13 +64,24 @@
         </section>
         <section id="content-users" class="panel-content">
           <h2 class="font_sied_p_003">Users</h2>
-          <table>
+          <!-- Bulk Actions -->
+          <div class="bulk-toolbar">
+            <button class="btn_sied">Add New User</button>
+            <button class="btn_sied">Delete Selected</button>
+            <button class="btn_sied">Export</button>
+          </div>
+          <table class="table_sied">
             <thead><tr><th><input type="checkbox" class="checkbox_sied"></th><th>Username</th><th>Active</th></tr></thead>
             <tbody>
               <tr><td><input type="checkbox" class="checkbox_sied"></td><td>alice</td><td><input type="radio" name="active-user" class="radio_sied"></td></tr>
               <tr><td><input type="checkbox" class="checkbox_sied"></td><td>bob</td><td><input type="radio" name="active-user" class="radio_sied" checked></td></tr>
             </tbody>
           </table>
+          <!-- Pagination -->
+          <div class="pagination-toolbar">
+            <button class="btn_sied">Prev</button>
+            <button class="btn_sied">Next</button>
+          </div>
         </section>
         <section id="content-settings" class="panel-content">
           <h2 class="font_sied_p_003">Settings</h2>

@@ -271,4 +271,39 @@
 .card_body_sied {
   font-size: var(--font-size-p-003);
 }
-/* Card Component [end] */ 
+/* Card Component [end] */
+
+/* Table Component [start] */
+.table_sied {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 16px;
+}
+.table_sied th, .table_sied td {
+  border: 1px solid var(--border-color-000);
+  padding: 8px;
+  text-align: left;
+}
+.table_sied th {
+  background-color: var(--backg-color-000-hover);
+  color: var(--text-color-000-hover);
+}
+/* Table Component [end] */
+
+/* Bulk Action Toolbar [start] */
+.bulk-toolbar {
+  margin: 16px 0;
+}
+.bulk-toolbar .btn_sied {
+  margin-right: 8px;
+}
+/* Bulk Action Toolbar [end] */
+
+/* Pagination Toolbar [start] */
+.pagination-toolbar {
+  margin-top: 12px;
+}
+.pagination-toolbar .btn_sied {
+  margin-right: 8px;
+}
+/* Pagination Toolbar [end] */ 
