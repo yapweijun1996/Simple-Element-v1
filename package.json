@@ -1,0 +1,32 @@
+{
+  "name": "simple-element-v1",
+  "version": "1.0.0",
+  "main": "simple-elements.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint . --ext .js,.html",
+    "format": "prettier --write .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yapweijun1996/Simple-Element-v1.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yapweijun1996/Simple-Element-v1/issues"
+  },
+  "homepage": "https://github.com/yapweijun1996/Simple-Element-v1#readme",
+  "description": "",
+  "devDependencies": {
+    "eslint": "^9.27.0",
+    "eslint-config-prettier": "^10.1.5",
+    "eslint-plugin-prettier": "^5.4.0",
+    "prettier": "^3.5.3",
+    "vite": "^6.3.5"
+  }
+}
