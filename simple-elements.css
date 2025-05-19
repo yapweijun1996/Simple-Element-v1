@@ -401,4 +401,6 @@
     content: attr(data-label);
   }
 }
-/* Responsive Design [end] */ 
+/* Responsive Design [end] */
+
+body { margin: 0; } 
