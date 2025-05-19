@@ -28,6 +28,10 @@
           <label for="menu-analytics">Analytics</label>
         </div>
         <div class="radio_toolbar_item_sied">
+          <input id="menu-logs" name="admin-menu" value="logs" type="radio">
+          <label for="menu-logs">Activity Logs</label>
+        </div>
+        <div class="radio_toolbar_item_sied">
           <input id="menu-settings" name="admin-menu" value="settings" type="radio">
           <label for="menu-settings">Settings</label>
         </div>
@@ -137,6 +141,31 @@
           </div>
           <div class="form-actions">
             <button class="btn_sied">Export Report</button>
+          </div>
+        </section>
+        <section id="content-logs" class="panel-content">
+          <h2 class="font_sied_p_003">Activity Logs</h2>
+          <!-- Log Filters -->
+          <div class="form-group">
+            <label class="label_so_001_sied">Filter by Date</label>
+            <input type="date" class="textbox_002_sied"> to <input type="date" class="textbox_002_sied">
+          </div>
+          <div class="form-group">
+            <label class="label_so_001_sied">Filter by User/Action</label>
+            <input type="text" class="textbox_001_sied" placeholder="Enter username or action">
+          </div>
+          <!-- Logs Table -->
+          <table class="table_sied">
+            <thead><tr><th>Timestamp</th><th>User</th><th>Action</th><th>Status</th></tr></thead>
+            <tbody>
+              <tr><td>2025-05-19 10:00</td><td>alice</td><td>Login</td><td>Success</td></tr>
+              <tr><td>2025-05-19 10:05</td><td>bob</td><td>Edit Settings</td><td>Success</td></tr>
+            </tbody>
+          </table>
+          <!-- Pagination -->
+          <div class="pagination-toolbar">
+            <button class="btn_sied">Prev</button>
+            <button class="btn_sied">Next</button>
           </div>
         </section>
         <section id="content-settings" class="panel-content">
