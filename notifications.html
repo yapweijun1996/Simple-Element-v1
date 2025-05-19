@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Panel - Notifications</title>
+  <link rel="stylesheet" href="simple-elements.css">
+  <script src="simple-elements.js" defer></script>
+</head>
+<body>
+  <a href="#main-content" class="skip-link" tabindex="0">Skip to main content</a>
+  <div class="admin-container">
+    <button class="sidebar-toggle" aria-label="Toggle menu" style="display:none;position:absolute;top:10px;left:10px;z-index:10;">☰</button>
+    <aside class="admin-sidebar" role="navigation" aria-label="Main menu">
+      <h2 class="font_sied_p_004">Menu</h2>
+      <nav>
+        <ul class="sidebar-menu">
+          <li><a href="index.html" class="sidebar-link">Dashboard</a></li>
+          <li><a href="users.html" class="sidebar-link">Users</a></li>
+          <li><a href="roles.html" class="sidebar-link">Roles</a></li>
+          <li><a href="analytics.html" class="sidebar-link">Analytics</a></li>
+          <li><a href="logs.html" class="sidebar-link">Activity Logs</a></li>
+          <li><a href="notifications.html" class="sidebar-link active" aria-current="page">Notifications</a></li>
+          <li><a href="settings.html" class="sidebar-link">Settings</a></li>
+          <li><a href="demo.html" class="sidebar-link">Demo Elements</a></li>
+        </ul>
+      </nav>
+    </aside>
+    <div class="admin-main" id="main-content" role="main">
+      <header class="admin-header">
+        <h1>Admin Panel</h1>
+      </header>
+      <div class="admin-content">
+        <section id="content-notifications">
+          <h2 class="font_sied_p_003">Notifications</h2>
+          <button class="btn_sied" style="margin-bottom:16px;">Mark All as Read</button>
+          <div class="notification_sied unread" aria-live="polite">Server restarted at 02:00 AM</div>
+          <div class="notification_sied" aria-live="polite">New user signup: charlie</div>
+          <div class="notification_sied unread" aria-live="polite">High memory usage detected</div>
+          <div class="notification_sied" aria-live="polite">Backup completed successfully</div>
+        </section>
+      </div>
+      <script>
+        // Sidebar toggle for mobile
+        const sidebar = document.querySelector('.admin-sidebar');
+        const toggleBtn = document.querySelector('.sidebar-toggle');
+        function checkSidebarToggle() {
+          if (window.innerWidth <= 900) {
+            toggleBtn.style.display = 'block';
+            sidebar.style.display = 'none';
+          } else {
+            toggleBtn.style.display = 'none';
+            sidebar.style.display = '';
+          }
+        }
+        toggleBtn.addEventListener('click', function() {
+          if (sidebar.style.display === 'none') {
+            sidebar.style.display = '';
+          } else {
+            sidebar.style.display = 'none';
+          }
+        });
+        window.addEventListener('resize', checkSidebarToggle);
+        checkSidebarToggle();
+      </script>
+    </div>
+  </div>
+</body>
+</html> 

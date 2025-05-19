@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Panel - Activity Logs</title>
+  <link rel="stylesheet" href="simple-elements.css">
+  <script src="simple-elements.js" defer></script>
+</head>
+<body>
+  <a href="#main-content" class="skip-link" tabindex="0">Skip to main content</a>
+  <div class="admin-container">
+    <button class="sidebar-toggle" aria-label="Toggle menu" style="display:none;position:absolute;top:10px;left:10px;z-index:10;">☰</button>
+    <aside class="admin-sidebar" role="navigation" aria-label="Main menu">
+      <h2 class="font_sied_p_004">Menu</h2>
+      <nav>
+        <ul class="sidebar-menu">
+          <li><a href="index.html" class="sidebar-link">Dashboard</a></li>
+          <li><a href="users.html" class="sidebar-link">Users</a></li>
+          <li><a href="roles.html" class="sidebar-link">Roles</a></li>
+          <li><a href="analytics.html" class="sidebar-link">Analytics</a></li>
+          <li><a href="logs.html" class="sidebar-link active" aria-current="page">Activity Logs</a></li>
+          <li><a href="notifications.html" class="sidebar-link">Notifications</a></li>
+          <li><a href="settings.html" class="sidebar-link">Settings</a></li>
+          <li><a href="demo.html" class="sidebar-link">Demo Elements</a></li>
+        </ul>
+      </nav>
+    </aside>
+    <div class="admin-main" id="main-content" role="main">
+      <header class="admin-header">
+        <h1>Admin Panel</h1>
+      </header>
+      <div class="admin-content">
+        <section id="content-logs">
+          <h2 class="font_sied_p_003">Activity Logs</h2>
+          <!-- Log Filters -->
+          <div class="form-group">
+            <label class="label_so_001_sied">Filter by Date</label>
+            <input type="date" class="textbox_002_sied"> to <input type="date" class="textbox_002_sied">
+          </div>
+          <div class="form-group">
+            <label class="label_so_001_sied">Filter by User/Action</label>
+            <input type="text" class="textbox_001_sied" placeholder="Enter username or action">
+          </div>
+          <!-- Logs Table -->
+          <table class="table_sied">
+            <thead><tr><th>Timestamp</th><th>User</th><th>Action</th><th>Status</th></tr></thead>
+            <tbody>
+              <tr><td>2025-05-19 10:00</td><td>alice</td><td>Login</td><td>Success</td></tr>
+              <tr><td>2025-05-19 10:05</td><td>bob</td><td>Edit Settings</td><td>Success</td></tr>
+              <tr><td>2025-05-19 10:10</td><td>charlie</td><td>Delete User</td><td>Failed</td></tr>
+              <tr><td>2025-05-19 10:15</td><td>dana</td><td>Export Report</td><td>Success</td></tr>
+              <tr><td>2025-05-19 10:20</td><td>eve</td><td>Login</td><td>Success</td></tr>
+            </tbody>
+          </table>
+          <!-- Pagination -->
+          <div class="pagination-toolbar">
+            <button class="btn_sied">Prev</button>
+            <button class="btn_sied">Next</button>
+          </div>
+        </section>
+      </div>
+      <script>
+        // Sidebar toggle for mobile
+        const sidebar = document.querySelector('.admin-sidebar');
+        const toggleBtn = document.querySelector('.sidebar-toggle');
+        function checkSidebarToggle() {
+          if (window.innerWidth <= 900) {
+            toggleBtn.style.display = 'block';
+            sidebar.style.display = 'none';
+          } else {
+            toggleBtn.style.display = 'none';
+            sidebar.style.display = '';
+          }
+        }
+        toggleBtn.addEventListener('click', function() {
+          if (sidebar.style.display === 'none') {
+            sidebar.style.display = '';
+          } else {
+            sidebar.style.display = 'none';
+          }
+        });
+        window.addEventListener('resize', checkSidebarToggle);
+        checkSidebarToggle();
+      </script>
+    </div>
+  </div>
+</body>
+</html> 
