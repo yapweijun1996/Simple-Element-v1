@@ -14,8 +14,8 @@ export default defineConfig({
         logs: './logs.html',
         notifications: './notifications.html',
         sidebar: './sidebar.html',
-        examples: './examples.html'
-      }
-    }
-  }
-}); 
+        examples: './examples.html',
+      },
+    },
+  },
+});

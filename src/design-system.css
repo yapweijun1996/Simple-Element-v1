@@ -1,184 +1,268 @@
 /* initialization [start] */
-:root{
-  --backg-color:white;
-  --backg-color-hover:black;
-  --main-color:black;
-  --main-color-hover:white;
-  --main-color-error:#EB1600;
-  --main-color-warning:#FFF700;
-  --main-color-success:#14D114;
-  --font-size:16px;
+:root {
+  --backg-color: white;
+  --backg-color-hover: black;
+  --main-color: black;
+  --main-color-hover: white;
+  --main-color-error: #eb1600;
+  --main-color-warning: #fff700;
+  --main-color-success: #14d114;
+  --font-size: 16px;
 
-  --border-color-000:var(--main-color);
-  --border-color-000-hover:var(--main-color-hover);
-  --border-color-error-000:var(--main-color-error);
-  --border-color-warning-000:var(--main-color-warning);
-  --border-color-success-000:var(--main-color-success);
-  --backg-color-000:var(--backg-color);
-  --backg-color-000-hover:var(--backg-color-hover);
-  --text-color-000:var(--main-color);
-  --text-color-000-hover:var(--main-color-hover);
-  --font-size-000:calc(var(--font-size) + 0px);
-  --font-size-p-001:calc(var(--font-size) + 1px);
-  --font-size-p-002:calc(var(--font-size) + 2px);
-  --font-size-p-003:calc(var(--font-size) + 3px);
-  --font-size-p-004:calc(var(--font-size) + 4px);
-  --font-size-p-005:calc(var(--font-size) + 5px);
-  --font-size-p-006:calc(var(--font-size) + 6px);
-  --font-size-p-007:calc(var(--font-size) + 7px);
-  --font-size-p-008:calc(var(--font-size) + 8px);
-  --font-size-p-009:calc(var(--font-size) + 9px);
-  --font-size-p-010:calc(var(--font-size) + 10px);
-  --font-size-m-001:calc(var(--font-size) - 1px);
-  --font-size-m-002:calc(var(--font-size) - 2px);
-  --font-size-m-003:calc(var(--font-size) - 3px);
-  --font-size-m-004:calc(var(--font-size) - 4px);
-  --font-size-m-005:calc(var(--font-size) - 5px);
-  --font-size-m-006:calc(var(--font-size) - 6px);
-  --font-size-m-007:calc(var(--font-size) - 7px);
-  --font-size-m-008:calc(var(--font-size) - 8px);
-  --font-size-m-009:calc(var(--font-size) - 9px);
-  --font-size-m-010:calc(var(--font-size) - 10px);
-  --font-family-000:"Arial", Helvetica, sans-serif;
-  --font-family-001:"Times New Roman", Times, serif;
-  --font-family-002:"Lucida Console", "Courier New", monospace;
+  --border-color-000: var(--main-color);
+  --border-color-000-hover: var(--main-color-hover);
+  --border-color-error-000: var(--main-color-error);
+  --border-color-warning-000: var(--main-color-warning);
+  --border-color-success-000: var(--main-color-success);
+  --backg-color-000: var(--backg-color);
+  --backg-color-000-hover: var(--backg-color-hover);
+  --text-color-000: var(--main-color);
+  --text-color-000-hover: var(--main-color-hover);
+  --font-size-000: calc(var(--font-size) + 0px);
+  --font-size-p-001: calc(var(--font-size) + 1px);
+  --font-size-p-002: calc(var(--font-size) + 2px);
+  --font-size-p-003: calc(var(--font-size) + 3px);
+  --font-size-p-004: calc(var(--font-size) + 4px);
+  --font-size-p-005: calc(var(--font-size) + 5px);
+  --font-size-p-006: calc(var(--font-size) + 6px);
+  --font-size-p-007: calc(var(--font-size) + 7px);
+  --font-size-p-008: calc(var(--font-size) + 8px);
+  --font-size-p-009: calc(var(--font-size) + 9px);
+  --font-size-p-010: calc(var(--font-size) + 10px);
+  --font-size-m-001: calc(var(--font-size) - 1px);
+  --font-size-m-002: calc(var(--font-size) - 2px);
+  --font-size-m-003: calc(var(--font-size) - 3px);
+  --font-size-m-004: calc(var(--font-size) - 4px);
+  --font-size-m-005: calc(var(--font-size) - 5px);
+  --font-size-m-006: calc(var(--font-size) - 6px);
+  --font-size-m-007: calc(var(--font-size) - 7px);
+  --font-size-m-008: calc(var(--font-size) - 8px);
+  --font-size-m-009: calc(var(--font-size) - 9px);
+  --font-size-m-010: calc(var(--font-size) - 10px);
+  --font-family-000: 'Arial', Helvetica, sans-serif;
+  --font-family-001: 'Times New Roman', Times, serif;
+  --font-family-002: 'Lucida Console', 'Courier New', monospace;
 }
 
 /* Font Size [start] */
-.font_sied_000{font-family:var(--font-family-000);color:var(--text-color-000);font-size:var(--font-size-000);}
-.font_sied_p_001{font-family:var(--font-family-000);color:var(--text-color-000);font-size:var(--font-size-p-001);}
-.font_sied_p_002{font-family:var(--font-family-000);color:var(--text-color-000);font-size:var(--font-size-p-002);}
-.font_sied_p_003{font-family:var(--font-family-000);color:var(--text-color-000);font-size:var(--font-size-p-003);}
-.font_sied_p_004{font-family:var(--font-family-000);color:var(--text-color-000);font-size:var(--font-size-p-004);}
-.font_sied_p_005{font-family:var(--font-family-000);color:var(--text-color-000);font-size:var(--font-size-p-005);}
-.font_sied_p_006{font-family:var(--font-family-000);color:var(--text-color-000);font-size:var(--font-size-p-006);}
-.font_sied_p_007{font-family:var(--font-family-000);color:var(--text-color-000);font-size:var(--font-size-p-007);}
-.font_sied_p_008{font-family:var(--font-family-000);color:var(--text-color-000);font-size:var(--font-size-p-008);}
-.font_sied_p_009{font-family:var(--font-family-000);color:var(--text-color-000);font-size:var(--font-size-p-009);}
-.font_sied_p_010{font-family:var(--font-family-000);color:var(--text-color-000);font-size:var(--font-size-p-010);}
-.font_sied_m_001{font-family:var(--font-family-000);color:var(--text-color-000);font-size:var(--font-size-m-001);}
-.font_sied_m_002{font-family:var(--font-family-000);color:var(--text-color-000);font-size:var(--font-size-m-002);}
-.font_sied_m_003{font-family:var(--font-family-000);color:var(--text-color-000);font-size:var(--font-size-m-003);}
-.font_sied_m_004{font-family:var(--font-family-000);color:var(--text-color-000);font-size:var(--font-size-m-004);}
-.font_sied_m_005{font-family:var(--font-family-000);color:var(--text-color-000);font-size:var(--font-size-m-005);}
-.font_sied_m_006{font-family:var(--font-family-000);color:var(--text-color-000);font-size:var(--font-size-m-006);}
-.font_sied_m_007{font-family:var(--font-family-000);color:var(--text-color-000);font-size:var(--font-size-m-007);}
-.font_sied_m_008{font-family:var(--font-family-000);color:var(--text-color-000);font-size:var(--font-size-m-008);}
-.font_sied_m_009{font-family:var(--font-family-000);color:var(--text-color-000);font-size:var(--font-size-m-009);}
-.font_sied_m_010{font-family:var(--font-family-000);color:var(--text-color-000);font-size:var(--font-size-m-010);}  
+.font_sied_000 {
+  font-family: var(--font-family-000);
+  color: var(--text-color-000);
+  font-size: var(--font-size-000);
+}
+.font_sied_p_001 {
+  font-family: var(--font-family-000);
+  color: var(--text-color-000);
+  font-size: var(--font-size-p-001);
+}
+.font_sied_p_002 {
+  font-family: var(--font-family-000);
+  color: var(--text-color-000);
+  font-size: var(--font-size-p-002);
+}
+.font_sied_p_003 {
+  font-family: var(--font-family-000);
+  color: var(--text-color-000);
+  font-size: var(--font-size-p-003);
+}
+.font_sied_p_004 {
+  font-family: var(--font-family-000);
+  color: var(--text-color-000);
+  font-size: var(--font-size-p-004);
+}
+.font_sied_p_005 {
+  font-family: var(--font-family-000);
+  color: var(--text-color-000);
+  font-size: var(--font-size-p-005);
+}
+.font_sied_p_006 {
+  font-family: var(--font-family-000);
+  color: var(--text-color-000);
+  font-size: var(--font-size-p-006);
+}
+.font_sied_p_007 {
+  font-family: var(--font-family-000);
+  color: var(--text-color-000);
+  font-size: var(--font-size-p-007);
+}
+.font_sied_p_008 {
+  font-family: var(--font-family-000);
+  color: var(--text-color-000);
+  font-size: var(--font-size-p-008);
+}
+.font_sied_p_009 {
+  font-family: var(--font-family-000);
+  color: var(--text-color-000);
+  font-size: var(--font-size-p-009);
+}
+.font_sied_p_010 {
+  font-family: var(--font-family-000);
+  color: var(--text-color-000);
+  font-size: var(--font-size-p-010);
+}
+.font_sied_m_001 {
+  font-family: var(--font-family-000);
+  color: var(--text-color-000);
+  font-size: var(--font-size-m-001);
+}
+.font_sied_m_002 {
+  font-family: var(--font-family-000);
+  color: var(--text-color-000);
+  font-size: var(--font-size-m-002);
+}
+.font_sied_m_003 {
+  font-family: var(--font-family-000);
+  color: var(--text-color-000);
+  font-size: var(--font-size-m-003);
+}
+.font_sied_m_004 {
+  font-family: var(--font-family-000);
+  color: var(--text-color-000);
+  font-size: var(--font-size-m-004);
+}
+.font_sied_m_005 {
+  font-family: var(--font-family-000);
+  color: var(--text-color-000);
+  font-size: var(--font-size-m-005);
+}
+.font_sied_m_006 {
+  font-family: var(--font-family-000);
+  color: var(--text-color-000);
+  font-size: var(--font-size-m-006);
+}
+.font_sied_m_007 {
+  font-family: var(--font-family-000);
+  color: var(--text-color-000);
+  font-size: var(--font-size-m-007);
+}
+.font_sied_m_008 {
+  font-family: var(--font-family-000);
+  color: var(--text-color-000);
+  font-size: var(--font-size-m-008);
+}
+.font_sied_m_009 {
+  font-family: var(--font-family-000);
+  color: var(--text-color-000);
+  font-size: var(--font-size-m-009);
+}
+.font_sied_m_010 {
+  font-family: var(--font-family-000);
+  color: var(--text-color-000);
+  font-size: var(--font-size-m-010);
+}
 /* Font Size [end  ] */
 /* initialization [end  ] */
 
 /* Button [start] */
-.btn_sied{
-  color:var(--text-color-000);
-  font-size:var(--font-size-000);
-  font-family:var(--font-family-000);
+.btn_sied {
+  color: var(--text-color-000);
+  font-size: var(--font-size-000);
+  font-family: var(--font-family-000);
   background: var(--backg-color-000);
-  border:2px solid var(--main-color);
-  font-weight:600;
-  padding:6px 12px;
+  border: 2px solid var(--main-color);
+  font-weight: 600;
+  padding: 6px 12px;
 }
-.btn_sied:hover{
-  color:var(--text-color-000-hover);
+.btn_sied:hover {
+  color: var(--text-color-000-hover);
   background: var(--backg-color-000-hover);
-  cursor:pointer;
+  cursor: pointer;
 }
 /* Button [end  ] */
 
 /* Radio Box [start] */
-.radio_label_sied{
-  color:var(--text-color-000);
-  font-size:var(--font-size-000);
-  font-weight:600;
-  font-family:var(--font-family-000);
+.radio_label_sied {
+  color: var(--text-color-000);
+  font-size: var(--font-size-000);
+  font-weight: 600;
+  font-family: var(--font-family-000);
 }
-.radio_label_sied:hover{
-  cursor:pointer;
+.radio_label_sied:hover {
+  cursor: pointer;
   accent-color: var(--main-color);
 }
 .radio_sied:checked {
   accent-color: var(--main-color);
 }
-.radio_toolbar_sied input[type="radio"] {
+.radio_toolbar_sied input[type='radio'] {
   display: none;
 }
-.radio_toolbar_item_sied{
-  display:inline-block;
-  padding:5px 0px;
+.radio_toolbar_item_sied {
+  display: inline-block;
+  padding: 5px 0px;
 }
 .radio_toolbar_sied label {
   background-color: var(--backg-color-000);
-  color:var(--text-color-000);
-  font-size:var(--font-size-000);
-  font-family:var(--font-family-000);
-  padding:6px 12px;
+  color: var(--text-color-000);
+  font-size: var(--font-size-000);
+  font-family: var(--font-family-000);
+  padding: 6px 12px;
   cursor: pointer;
-  font-weight:600;
-  border:2px solid var(--border-color-000);
-  display:inline-block;
+  font-weight: 600;
+  border: 2px solid var(--border-color-000);
+  display: inline-block;
 }
-.radio_toolbar_sied input[type="radio"]:checked+label {
+.radio_toolbar_sied input[type='radio']:checked + label {
   background-color: var(--backg-color-000-hover);
-  color:var(--text-color-000-hover);
+  color: var(--text-color-000-hover);
 }
 /* Radio Box [end  ] */
 
 /* Checkbox [start] */
-.checkbox_label_sied{
-  color:var(--text-color-000);
-  font-size:var(--font-size-000);
-  font-weight:600;
-  font-family:var(--font-family-000);
+.checkbox_label_sied {
+  color: var(--text-color-000);
+  font-size: var(--font-size-000);
+  font-weight: 600;
+  font-family: var(--font-family-000);
 }
-.checkbox_label_sied:hover{
-  cursor:pointer;
+.checkbox_label_sied:hover {
+  cursor: pointer;
   accent-color: var(--main-color);
 }
 .checkbox_sied:checked {
   accent-color: var(--main-color);
 }
-.checkbox_toolbar_sied input[type="checkbox"] {
+.checkbox_toolbar_sied input[type='checkbox'] {
   display: none;
 }
-.checkbox_toolbar_item_sied{
-  display:inline-block;
+.checkbox_toolbar_item_sied {
+  display: inline-block;
   padding: 5px 0px;
 }
 .checkbox_toolbar_sied label {
   background-color: var(--backg-color-000);
-  color:var(--text-color-000);
-  font-size:var(--font-size-000);
-  font-family:var(--font-family-000);
-  padding:6px 12px;
+  color: var(--text-color-000);
+  font-size: var(--font-size-000);
+  font-family: var(--font-family-000);
+  padding: 6px 12px;
   cursor: pointer;
-  font-weight:600;
-  border:2px solid var(--border-color-000);
-  display:inline-block;
+  font-weight: 600;
+  border: 2px solid var(--border-color-000);
+  display: inline-block;
 }
-.checkbox_toolbar_sied input[type="checkbox"]:checked+label {
+.checkbox_toolbar_sied input[type='checkbox']:checked + label {
   background-color: var(--backg-color-000-hover);
-  color:var(--text-color-000-hover);
+  color: var(--text-color-000-hover);
 }
 /* Checkbox [end  ] */
 
 /* Textbox [start] */
-.textbox_001_sied{
+.textbox_001_sied {
   background-color: var(--backg-color-000);
-  color:var(--text-color-000);
-  font-size:var(--font-size-000);
-  font-family:var(--font-family-000);
-  padding:6px 6px;
+  color: var(--text-color-000);
+  font-size: var(--font-size-000);
+  font-family: var(--font-family-000);
+  padding: 6px 6px;
   border: 2px solid var(--border-color-000);
-  margin:5px 0px;
+  margin: 5px 0px;
 }
-.textbox_001_sied.error{
+.textbox_001_sied.error {
   border: 3px solid var(--border-color-error-000);
-  padding: 4.4px 4.4px;/*0.8px = 1px*/
+  padding: 4.4px 4.4px; /*0.8px = 1px*/
 }
-.textbox_001_sied.warning{
+.textbox_001_sied.warning {
   border: 3px solid var(--border-color-warning-000);
-  padding: 4.4px 4.4px;/*0.8px = 1px*/
+  padding: 4.4px 4.4px; /*0.8px = 1px*/
 }
 /* Textbox [end  ] */
 /* Textarea [start] */
@@ -186,4 +270,4 @@
 /* Select Option [start] */
 /* Select Option [end  ] */
 /* Form Input Type Text with Data Selection [start] */
-/* Form Input Type Text with Data Selection [end  ] */ 
+/* Form Input Type Text with Data Selection [end  ] */

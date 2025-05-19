@@ -1,91 +1,138 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Admin Panel - Roles</title>
-  
-  <script type="module" src="./src/simple-elements.js"></script>
-</head>
-<body>
-  <a href="#main-content" class="skip-link" tabindex="0">Skip to main content</a>
-  <div class="admin-container">
-    <button class="sidebar-toggle" aria-label="Toggle menu" style="display:none;position:absolute;top:10px;left:10px;z-index:10;">☰</button>
-    <aside class="admin-sidebar" role="navigation" aria-label="Main menu">
-      <h2 class="font_sied_p_004">Menu</h2>
-      <nav>
-        <ul class="sidebar-menu">
-          <li><a href="index.html" class="sidebar-link">Dashboard</a></li>
-          <li><a href="users.html" class="sidebar-link">Users</a></li>
-          <li><a href="roles.html" class="sidebar-link active" aria-current="page">Roles</a></li>
-          <li><a href="analytics.html" class="sidebar-link">Analytics</a></li>
-          <li><a href="logs.html" class="sidebar-link">Activity Logs</a></li>
-          <li><a href="notifications.html" class="sidebar-link">Notifications</a></li>
-          <li><a href="settings.html" class="sidebar-link">Settings</a></li>
-          <li><a href="demo.html" class="sidebar-link">Demo Elements</a></li>
-        </ul>
-      </nav>
-    </aside>
-    <div class="admin-main" id="main-content" role="main">
-      <header class="admin-header">
-        <h1>Admin Panel</h1>
-      </header>
-      <div class="admin-content">
-        <section id="content-roles">
-          <h2 class="font_sied_p_003">Roles & Permissions</h2>
-          <!-- Roles Table -->
-          <table class="table_sied">
-            <thead><tr><th><input type="checkbox" class="checkbox_sied"></th><th>Role Name</th><th>Permissions</th></tr></thead>
-            <tbody>
-              <tr><td><input type="checkbox" class="checkbox_sied"></td><td>Admin</td><td>Read, Write, Execute</td></tr>
-              <tr><td><input type="checkbox" class="checkbox_sied"></td><td>User</td><td>Read</td></tr>
-              <tr><td><input type="checkbox" class="checkbox_sied"></td><td>Manager</td><td>Read, Write</td></tr>
-            </tbody>
-          </table>
-          <!-- Role Form -->
-          <form>
-            <div class="form-group">
-              <label for="role-name" class="label_so_001_sied">Role Name</label>
-              <input type="text" id="role-name" class="textbox_001_sied">
-            </div>
-            <div class="form-group">
-              <label for="permissions" class="label_so_001_sied">Permissions</label>
-              <select id="permissions" class="select_so_001_sied" multiple>
-                <option>Read</option>
-                <option>Write</option>
-                <option>Execute</option>
-              </select>
-            </div>
-            <div class="form-actions">
-              <button type="button" class="btn_sied">Add Role</button>
-              <button type="button" class="btn_sied">Update Role</button>
-            </div>
-          </form>
-        </section>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Admin Panel - Roles</title>
+
+    <script type="module" src="./src/simple-elements.js"></script>
+  </head>
+  <body>
+    <a href="#main-content" class="skip-link" tabindex="0"
+      >Skip to main content</a
+    >
+    <div class="admin-container">
+      <button
+        class="sidebar-toggle"
+        aria-label="Toggle menu"
+        style="
+          display: none;
+          position: absolute;
+          top: 10px;
+          left: 10px;
+          z-index: 10;
+        "
+      >
+        ☰
+      </button>
+      <aside class="admin-sidebar" role="navigation" aria-label="Main menu">
+        <h2 class="font_sied_p_004">Menu</h2>
+        <nav>
+          <ul class="sidebar-menu">
+            <li><a href="index.html" class="sidebar-link">Dashboard</a></li>
+            <li><a href="users.html" class="sidebar-link">Users</a></li>
+            <li>
+              <a
+                href="roles.html"
+                class="sidebar-link active"
+                aria-current="page"
+                >Roles</a
+              >
+            </li>
+            <li><a href="analytics.html" class="sidebar-link">Analytics</a></li>
+            <li><a href="logs.html" class="sidebar-link">Activity Logs</a></li>
+            <li>
+              <a href="notifications.html" class="sidebar-link"
+                >Notifications</a
+              >
+            </li>
+            <li><a href="settings.html" class="sidebar-link">Settings</a></li>
+            <li><a href="demo.html" class="sidebar-link">Demo Elements</a></li>
+          </ul>
+        </nav>
+      </aside>
+      <div class="admin-main" id="main-content" role="main">
+        <header class="admin-header">
+          <h1>Admin Panel</h1>
+        </header>
+        <div class="admin-content">
+          <section id="content-roles">
+            <h2 class="font_sied_p_003">Roles & Permissions</h2>
+            <!-- Roles Table -->
+            <table class="table_sied">
+              <thead>
+                <tr>
+                  <th><input type="checkbox" class="checkbox_sied" /></th>
+                  <th>Role Name</th>
+                  <th>Permissions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><input type="checkbox" class="checkbox_sied" /></td>
+                  <td>Admin</td>
+                  <td>Read, Write, Execute</td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox" class="checkbox_sied" /></td>
+                  <td>User</td>
+                  <td>Read</td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox" class="checkbox_sied" /></td>
+                  <td>Manager</td>
+                  <td>Read, Write</td>
+                </tr>
+              </tbody>
+            </table>
+            <!-- Role Form -->
+            <form>
+              <div class="form-group">
+                <label for="role-name" class="label_so_001_sied"
+                  >Role Name</label
+                >
+                <input type="text" id="role-name" class="textbox_001_sied" />
+              </div>
+              <div class="form-group">
+                <label for="permissions" class="label_so_001_sied"
+                  >Permissions</label
+                >
+                <select id="permissions" class="select_so_001_sied" multiple>
+                  <option>Read</option>
+                  <option>Write</option>
+                  <option>Execute</option>
+                </select>
+              </div>
+              <div class="form-actions">
+                <button type="button" class="btn_sied">Add Role</button>
+                <button type="button" class="btn_sied">Update Role</button>
+              </div>
+            </form>
+          </section>
+        </div>
+        <script>
+          // Sidebar toggle for mobile
+          const sidebar = document.querySelector('.admin-sidebar');
+          const toggleBtn = document.querySelector('.sidebar-toggle');
+          function checkSidebarToggle() {
+            if (window.innerWidth <= 900) {
+              toggleBtn.style.display = 'block';
+              sidebar.style.display = 'none';
+            } else {
+              toggleBtn.style.display = 'none';
+              sidebar.style.display = '';
+            }
+          }
+          toggleBtn.addEventListener('click', function () {
+            if (sidebar.style.display === 'none') {
+              sidebar.style.display = '';
+            } else {
+              sidebar.style.display = 'none';
+            }
+          });
+          window.addEventListener('resize', checkSidebarToggle);
+          checkSidebarToggle();
+        </script>
       </div>
-      <script>
-        // Sidebar toggle for mobile
-        const sidebar = document.querySelector('.admin-sidebar');
-        const toggleBtn = document.querySelector('.sidebar-toggle');
-        function checkSidebarToggle() {
-          if (window.innerWidth <= 900) {
-            toggleBtn.style.display = 'block';
-            sidebar.style.display = 'none';
-          } else {
-            toggleBtn.style.display = 'none';
-            sidebar.style.display = '';
-          }
-        }
-        toggleBtn.addEventListener('click', function() {
-          if (sidebar.style.display === 'none') {
-            sidebar.style.display = '';
-          } else {
-            sidebar.style.display = 'none';
-          }
-        });
-        window.addEventListener('resize', checkSidebarToggle);
-        checkSidebarToggle();
-      </script>
     </div>
-  </div>
-</body>
-</html> 
+  </body>
+</html>

@@ -1,193 +1,302 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Admin Panel</title>
-  <script type="module" src="./src/simple-elements.js"></script>
-</head>
-<body>
-  <div class="admin-container">
-    <button class="sidebar-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
-    <aside class="admin-sidebar" role="navigation" aria-label="Main menu">
-      <!-- Sidebar content will be loaded by JavaScript -->
-    </aside>
-    <div class="admin-main" id="main-content" role="main">
-      <header class="admin-header">
-        <h1>Admin Panel</h1>
-      </header>
-      <div class="admin-content">
-        <section id="content-dashboard">
-          <h2 class="font_sied_p_003">Dashboard</h2>
-          <!-- Summary Cards -->
-          <div class="card_sied">
-            <div class="card_header_sied">Total Users</div>
-            <div class="card_body_sied">120</div>
-          </div>
-          <div class="card_sied">
-            <div class="card_header_sied">Active Sessions</div>
-            <div class="card_body_sied">45</div>
-          </div>
-          <div class="card_sied">
-            <div class="card_header_sied">New Signups</div>
-            <div class="card_body_sied">5</div>
-          </div>
-          <!-- Quick Actions -->
-          <div class="radio_toolbar_sied" style="margin:16px 0;">
-            <div class="radio_toolbar_item_sied"><button class="btn_sied">Add User</button></div>
-            <div class="radio_toolbar_item_sied"><button class="btn_sied">Refresh Data</button></div>
-          </div>
-          <!-- Filters -->
-          <label class="label_so_001_sied">Filter by Role:</label>
-          <select class="select_so_001_sied" style="margin-bottom:16px;">
-            <option>All</option><option>Admin</option><option>User</option>
-          </select>
-          <br>
-          <label class="label_so_001_sied">Search Users:</label>
-          <input list="user-list" class="textbox_001_sied" autocomplete="off">
-          <datalist id="user-list" class="datalist_sied_001">
-            <option value="alice"></option><option value="bob"></option>
-          </datalist>
-        </section>
-        <section id="content-users" class="panel-content">
-          <h2 class="font_sied_p_003">Users</h2>
-          <!-- Bulk Actions -->
-          <div class="bulk-toolbar">
-            <button class="btn_sied">Add New User</button>
-            <button class="btn_sied">Delete Selected</button>
-            <button class="btn_sied">Export</button>
-          </div>
-          <table class="table_sied">
-            <thead><tr><th><input type="checkbox" class="checkbox_sied"></th><th>Username</th><th>Active</th></tr></thead>
-            <tbody>
-              <tr><td><input type="checkbox" class="checkbox_sied"></td><td>alice</td><td><input type="radio" name="active-user" class="radio_sied"></td></tr>
-              <tr><td><input type="checkbox" class="checkbox_sied"></td><td>bob</td><td><input type="radio" name="active-user" class="radio_sied" checked></td></tr>
-            </tbody>
-          </table>
-          <!-- Pagination -->
-          <div class="pagination-toolbar">
-            <button class="btn_sied">Prev</button>
-            <button class="btn_sied">Next</button>
-          </div>
-        </section>
-        <section id="content-roles" class="panel-content">
-          <h2 class="font_sied_p_003">Roles & Permissions</h2>
-          <!-- Roles Table -->
-          <table class="table_sied">
-            <thead><tr><th><input type="checkbox" class="checkbox_sied"></th><th>Role Name</th><th>Permissions</th></tr></thead>
-            <tbody>
-              <tr><td><input type="checkbox" class="checkbox_sied"></td><td>Admin</td><td>Read, Write, Execute</td></tr>
-              <tr><td><input type="checkbox" class="checkbox_sied"></td><td>User</td><td>Read</td></tr>
-            </tbody>
-          </table>
-          <!-- Role Form -->
-          <form>
-            <div class="form-group">
-              <label for="role-name" class="label_so_001_sied">Role Name</label>
-              <input type="text" id="role-name" class="textbox_001_sied">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Panel</title>
+    <script type="module" src="./src/simple-elements.js"></script>
+  </head>
+  <body>
+    <div class="admin-container">
+      <button
+        class="sidebar-toggle"
+        aria-label="Toggle menu"
+        aria-expanded="false"
+      >
+        ☰
+      </button>
+      <aside class="admin-sidebar" role="navigation" aria-label="Main menu">
+        <!-- Sidebar content will be loaded by JavaScript -->
+      </aside>
+      <div class="admin-main" id="main-content" role="main">
+        <header class="admin-header">
+          <h1>Admin Panel</h1>
+        </header>
+        <div class="admin-content">
+          <section id="content-dashboard">
+            <h2 class="font_sied_p_003">Dashboard</h2>
+            <!-- Summary Cards -->
+            <div class="card_sied">
+              <div class="card_header_sied">Total Users</div>
+              <div class="card_body_sied">120</div>
             </div>
+            <div class="card_sied">
+              <div class="card_header_sied">Active Sessions</div>
+              <div class="card_body_sied">45</div>
+            </div>
+            <div class="card_sied">
+              <div class="card_header_sied">New Signups</div>
+              <div class="card_body_sied">5</div>
+            </div>
+            <!-- Quick Actions -->
+            <div class="radio_toolbar_sied" style="margin: 16px 0">
+              <div class="radio_toolbar_item_sied">
+                <button class="btn_sied">Add User</button>
+              </div>
+              <div class="radio_toolbar_item_sied">
+                <button class="btn_sied">Refresh Data</button>
+              </div>
+            </div>
+            <!-- Filters -->
+            <label class="label_so_001_sied">Filter by Role:</label>
+            <select class="select_so_001_sied" style="margin-bottom: 16px">
+              <option>All</option>
+              <option>Admin</option>
+              <option>User</option>
+            </select>
+            <br />
+            <label class="label_so_001_sied">Search Users:</label>
+            <input
+              list="user-list"
+              class="textbox_001_sied"
+              autocomplete="off"
+            />
+            <datalist id="user-list" class="datalist_sied_001">
+              <option value="alice"></option>
+              <option value="bob"></option>
+            </datalist>
+          </section>
+          <section id="content-users" class="panel-content">
+            <h2 class="font_sied_p_003">Users</h2>
+            <!-- Bulk Actions -->
+            <div class="bulk-toolbar">
+              <button class="btn_sied">Add New User</button>
+              <button class="btn_sied">Delete Selected</button>
+              <button class="btn_sied">Export</button>
+            </div>
+            <table class="table_sied">
+              <thead>
+                <tr>
+                  <th><input type="checkbox" class="checkbox_sied" /></th>
+                  <th>Username</th>
+                  <th>Active</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><input type="checkbox" class="checkbox_sied" /></td>
+                  <td>alice</td>
+                  <td>
+                    <input type="radio" name="active-user" class="radio_sied" />
+                  </td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox" class="checkbox_sied" /></td>
+                  <td>bob</td>
+                  <td>
+                    <input
+                      type="radio"
+                      name="active-user"
+                      class="radio_sied"
+                      checked
+                    />
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <!-- Pagination -->
+            <div class="pagination-toolbar">
+              <button class="btn_sied">Prev</button>
+              <button class="btn_sied">Next</button>
+            </div>
+          </section>
+          <section id="content-roles" class="panel-content">
+            <h2 class="font_sied_p_003">Roles & Permissions</h2>
+            <!-- Roles Table -->
+            <table class="table_sied">
+              <thead>
+                <tr>
+                  <th><input type="checkbox" class="checkbox_sied" /></th>
+                  <th>Role Name</th>
+                  <th>Permissions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><input type="checkbox" class="checkbox_sied" /></td>
+                  <td>Admin</td>
+                  <td>Read, Write, Execute</td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox" class="checkbox_sied" /></td>
+                  <td>User</td>
+                  <td>Read</td>
+                </tr>
+              </tbody>
+            </table>
+            <!-- Role Form -->
+            <form>
+              <div class="form-group">
+                <label for="role-name" class="label_so_001_sied"
+                  >Role Name</label
+                >
+                <input type="text" id="role-name" class="textbox_001_sied" />
+              </div>
+              <div class="form-group">
+                <label for="permissions" class="label_so_001_sied"
+                  >Permissions</label
+                >
+                <select id="permissions" class="select_so_001_sied" multiple>
+                  <option>Read</option>
+                  <option>Write</option>
+                  <option>Execute</option>
+                </select>
+              </div>
+              <div class="form-actions">
+                <button type="button" class="btn_sied">Add Role</button>
+                <button type="button" class="btn_sied">Update Role</button>
+              </div>
+            </form>
+          </section>
+          <section id="content-analytics" class="panel-content">
+            <h2 class="font_sied_p_003">Analytics</h2>
             <div class="form-group">
-              <label for="permissions" class="label_so_001_sied">Permissions</label>
-              <select id="permissions" class="select_so_001_sied" multiple>
-                <option>Read</option>
-                <option>Write</option>
-                <option>Execute</option>
-              </select>
+              <label class="label_so_001_sied">Date Range</label>
+              <input type="date" class="textbox_002_sied" /> to
+              <input type="date" class="textbox_002_sied" />
+            </div>
+            <div class="card_sied">
+              <div class="card_header_sied">Visitor Statistics</div>
+              <div class="card_body_sied">[Chart Placeholder]</div>
+            </div>
+            <div class="card_sied">
+              <div class="card_header_sied">Sales Report</div>
+              <div class="card_body_sied">[Chart Placeholder]</div>
             </div>
             <div class="form-actions">
-              <button type="button" class="btn_sied">Add Role</button>
-              <button type="button" class="btn_sied">Update Role</button>
+              <button class="btn_sied">Export Report</button>
             </div>
-          </form>
-        </section>
-        <section id="content-analytics" class="panel-content">
-          <h2 class="font_sied_p_003">Analytics</h2>
-          <div class="form-group">
-            <label class="label_so_001_sied">Date Range</label>
-            <input type="date" class="textbox_002_sied"> to <input type="date" class="textbox_002_sied">
-          </div>
-          <div class="card_sied">
-            <div class="card_header_sied">Visitor Statistics</div>
-            <div class="card_body_sied">[Chart Placeholder]</div>
-          </div>
-          <div class="card_sied">
-            <div class="card_header_sied">Sales Report</div>
-            <div class="card_body_sied">[Chart Placeholder]</div>
-          </div>
-          <div class="form-actions">
-            <button class="btn_sied">Export Report</button>
-          </div>
-        </section>
-        <section id="content-logs" class="panel-content">
-          <h2 class="font_sied_p_003">Activity Logs</h2>
-          <!-- Log Filters -->
-          <div class="form-group">
-            <label class="label_so_001_sied">Filter by Date</label>
-            <input type="date" class="textbox_002_sied"> to <input type="date" class="textbox_002_sied">
-          </div>
-          <div class="form-group">
-            <label class="label_so_001_sied">Filter by User/Action</label>
-            <input type="text" class="textbox_001_sied" placeholder="Enter username or action">
-          </div>
-          <!-- Logs Table -->
-          <table class="table_sied">
-            <thead><tr><th>Timestamp</th><th>User</th><th>Action</th><th>Status</th></tr></thead>
-            <tbody>
-              <tr><td>2025-05-19 10:00</td><td>alice</td><td>Login</td><td>Success</td></tr>
-              <tr><td>2025-05-19 10:05</td><td>bob</td><td>Edit Settings</td><td>Success</td></tr>
-            </tbody>
-          </table>
-          <!-- Pagination -->
-          <div class="pagination-toolbar">
-            <button class="btn_sied">Prev</button>
-            <button class="btn_sied">Next</button>
-          </div>
-        </section>
-        <section id="content-notifications" class="panel-content">
-          <h2 class="font_sied_p_003">Notifications</h2>
-          <button class="btn_sied" style="margin-bottom:16px;">Mark All as Read</button>
-          <div class="notification_sied unread" aria-live="polite">Server restarted at 02:00 AM</div>
-          <div class="notification_sied" aria-live="polite">New user signup: charlie</div>
-          <div class="notification_sied unread" aria-live="polite">High memory usage detected</div>
-        </section>
-        <section id="content-settings" class="panel-content">
-          <h2 class="font_sied_p_003">Settings</h2>
-          <form>
+          </section>
+          <section id="content-logs" class="panel-content">
+            <h2 class="font_sied_p_003">Activity Logs</h2>
+            <!-- Log Filters -->
             <div class="form-group">
-              <label for="site-title" class="label_so_001_sied">Site Title</label>
-              <input type="text" id="site-title" class="textbox_001_sied" value="My Site">
+              <label class="label_so_001_sied">Filter by Date</label>
+              <input type="date" class="textbox_002_sied" /> to
+              <input type="date" class="textbox_002_sied" />
             </div>
             <div class="form-group">
-              <label for="maintenance" class="label_so_001_sied">Maintenance Mode</label>
-              <input type="checkbox" id="maintenance" class="checkbox_sied">
+              <label class="label_so_001_sied">Filter by User/Action</label>
+              <input
+                type="text"
+                class="textbox_001_sied"
+                placeholder="Enter username or action"
+              />
             </div>
-            <div class="form-group">
-              <label for="theme" class="label_so_001_sied">Theme</label>
-              <select id="theme" class="select_so_001_sied">
-                <option>Light</option>
-                <option>Dark</option>
-              </select>
+            <!-- Logs Table -->
+            <table class="table_sied">
+              <thead>
+                <tr>
+                  <th>Timestamp</th>
+                  <th>User</th>
+                  <th>Action</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>2025-05-19 10:00</td>
+                  <td>alice</td>
+                  <td>Login</td>
+                  <td>Success</td>
+                </tr>
+                <tr>
+                  <td>2025-05-19 10:05</td>
+                  <td>bob</td>
+                  <td>Edit Settings</td>
+                  <td>Success</td>
+                </tr>
+              </tbody>
+            </table>
+            <!-- Pagination -->
+            <div class="pagination-toolbar">
+              <button class="btn_sied">Prev</button>
+              <button class="btn_sied">Next</button>
             </div>
-            <div class="form-group">
-              <label for="admin-email" class="label_so_001_sied">Admin Email</label>
-              <input list="emails" class="textbox_001_sied" id="admin-email" autocomplete="off">
-              <datalist id="emails" class="datalist_sied_001">
-                <option value="admin@example.com"></option>
-                <option value="support@example.com"></option>
-              </datalist>
+          </section>
+          <section id="content-notifications" class="panel-content">
+            <h2 class="font_sied_p_003">Notifications</h2>
+            <button class="btn_sied" style="margin-bottom: 16px">
+              Mark All as Read
+            </button>
+            <div class="notification_sied unread" aria-live="polite">
+              Server restarted at 02:00 AM
             </div>
-            <div class="form-group">
-              <label for="description" class="label_so_001_sied">Description</label>
-              <textarea id="description" class="textarea_001_sied" rows="4">Enter info...</textarea>
+            <div class="notification_sied" aria-live="polite">
+              New user signup: charlie
             </div>
-            <div class="form-actions">
-              <button type="button" class="btn_sied">Save Settings</button>
-              <button type="reset" class="btn_sied">Reset</button>
+            <div class="notification_sied unread" aria-live="polite">
+              High memory usage detected
             </div>
-          </form>
-        </section>
+          </section>
+          <section id="content-settings" class="panel-content">
+            <h2 class="font_sied_p_003">Settings</h2>
+            <form>
+              <div class="form-group">
+                <label for="site-title" class="label_so_001_sied"
+                  >Site Title</label
+                >
+                <input
+                  type="text"
+                  id="site-title"
+                  class="textbox_001_sied"
+                  value="My Site"
+                />
+              </div>
+              <div class="form-group">
+                <label for="maintenance" class="label_so_001_sied"
+                  >Maintenance Mode</label
+                >
+                <input type="checkbox" id="maintenance" class="checkbox_sied" />
+              </div>
+              <div class="form-group">
+                <label for="theme" class="label_so_001_sied">Theme</label>
+                <select id="theme" class="select_so_001_sied">
+                  <option>Light</option>
+                  <option>Dark</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="admin-email" class="label_so_001_sied"
+                  >Admin Email</label
+                >
+                <input
+                  list="emails"
+                  class="textbox_001_sied"
+                  id="admin-email"
+                  autocomplete="off"
+                />
+                <datalist id="emails" class="datalist_sied_001">
+                  <option value="admin@example.com"></option>
+                  <option value="support@example.com"></option>
+                </datalist>
+              </div>
+              <div class="form-group">
+                <label for="description" class="label_so_001_sied"
+                  >Description</label
+                >
+                <textarea id="description" class="textarea_001_sied" rows="4">
+Enter info...</textarea
+                >
+              </div>
+              <div class="form-actions">
+                <button type="button" class="btn_sied">Save Settings</button>
+                <button type="reset" class="btn_sied">Reset</button>
+              </div>
+            </form>
+          </section>
+        </div>
       </div>
     </div>
-  </div>
-</body>
+  </body>
 </html>

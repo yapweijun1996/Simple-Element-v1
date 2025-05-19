@@ -7,13 +7,13 @@ import './simple-elements.css';
 import './design-system.css';
 
 // Sidebar functionality
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   // Load sidebar
   loadSidebar();
-  
+
   // Initialize mobile sidebar
   initMobileSidebar();
-  
+
   // Set active page in sidebar
   setActivePage();
 });
@@ -40,19 +40,19 @@ async function loadSidebar() {
 function initMobileSidebar() {
   const sidebar = document.querySelector('.admin-sidebar');
   const toggleBtn = document.querySelector('.sidebar-toggle');
-  
+
   if (!sidebar || !toggleBtn) return;
-  
+
   // Set initial state
   checkSidebarToggle();
-  
+
   // Add event listeners
-  toggleBtn.addEventListener('click', function() {
+  toggleBtn.addEventListener('click', function () {
     const isHidden = sidebar.style.display === 'none';
     sidebar.style.display = isHidden ? '' : 'none';
     toggleBtn.setAttribute('aria-expanded', !isHidden);
   });
-  
+
   window.addEventListener('resize', checkSidebarToggle);
 }
 
@@ -62,9 +62,9 @@ function initMobileSidebar() {
 function checkSidebarToggle() {
   const sidebar = document.querySelector('.admin-sidebar');
   const toggleBtn = document.querySelector('.sidebar-toggle');
-  
+
   if (!sidebar || !toggleBtn) return;
-  
+
   if (window.innerWidth <= 900) {
     toggleBtn.style.display = 'block';
     sidebar.style.display = 'none';
@@ -80,12 +80,18 @@ function checkSidebarToggle() {
  * Sets the active page in the sidebar based on current URL
  */
 function setActivePage() {
-  const currentPage = window.location.pathname.split('/').pop().replace('.html', '');
+  const currentPage = window.location.pathname
+    .split('/')
+    .pop()
+    .replace('.html', '');
   const sidebarLinks = document.querySelectorAll('.sidebar-link');
-  
-  sidebarLinks.forEach(link => {
+
+  sidebarLinks.forEach((link) => {
     const linkPage = link.getAttribute('data-page');
-    if (linkPage === currentPage || (currentPage === '' && linkPage === 'dashboard')) {
+    if (
+      linkPage === currentPage ||
+      (currentPage === '' && linkPage === 'dashboard')
+    ) {
       link.classList.add('active');
       link.setAttribute('aria-current', 'page');
     } else {
@@ -93,4 +99,4 @@ function setActivePage() {
       link.removeAttribute('aria-current');
     }
   });
-} 
+}
