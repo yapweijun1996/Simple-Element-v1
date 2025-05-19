@@ -322,4 +322,18 @@
 .form-actions .btn_sied {
   margin-right: 8px;
 }
-/* Form Utility [end] */ 
+/* Form Utility [end] */
+
+/* Notification Component [start] */
+.notification_sied {
+  background-color: var(--backg-color-000);
+  border: 1px solid var(--border-color-000);
+  border-radius: 4px;
+  padding: 8px;
+  margin-bottom: 8px;
+}
+.notification_sied.unread {
+  font-weight: 600;
+  border-left: 4px solid var(--main-color);
+}
+/* Notification Component [end] */ 
