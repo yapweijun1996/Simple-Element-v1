@@ -306,4 +306,20 @@
 .pagination-toolbar .btn_sied {
   margin-right: 8px;
 }
-/* Pagination Toolbar [end] */ 
+/* Pagination Toolbar [end] */
+
+/* Form Utility [start] */
+.form-group {
+  margin-bottom: 16px;
+}
+.form-group label {
+  display: block;
+  margin-bottom: 4px;
+}
+.form-actions {
+  margin-top: 24px;
+}
+.form-actions .btn_sied {
+  margin-right: 8px;
+}
+/* Form Utility [end] */ 

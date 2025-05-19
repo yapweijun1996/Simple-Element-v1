@@ -86,23 +86,37 @@
         <section id="content-settings" class="panel-content">
           <h2 class="font_sied_p_003">Settings</h2>
           <form>
-            <label for="site-title" class="label_so_001_sied">Site Title</label><br>
-            <input type="text" id="site-title" class="textbox_001_sied" value="My Site"><br><br>
-            <label for="maintenance" class="label_so_001_sied">Maintenance Mode</label>
-            <input type="checkbox" id="maintenance" class="checkbox_sied"><br><br>
-            <label for="theme" class="label_so_001_sied">Theme</label><br>
-            <select id="theme" class="select_so_001_sied">
-              <option>Light</option><option>Dark</option>
-            </select><br><br>
-            <label for="admin-email" class="label_so_001_sied">Admin Email</label><br>
-            <input list="emails" class="textbox_001_sied" id="admin-email" autocomplete="off">
-            <datalist id="emails" class="datalist_sied_001">
-              <option value="admin@example.com"></option>
-              <option value="support@example.com"></option>
-            </datalist><br><br>
-            <label for="description" class="label_so_001_sied">Description</label><br>
-            <textarea id="description" class="textarea_001_sied" rows="4">Enter info...</textarea><br><br>
-            <input type="button" class="btn_sied" value="Save Settings">
+            <div class="form-group">
+              <label for="site-title" class="label_so_001_sied">Site Title</label>
+              <input type="text" id="site-title" class="textbox_001_sied" value="My Site">
+            </div>
+            <div class="form-group">
+              <label for="maintenance" class="label_so_001_sied">Maintenance Mode</label>
+              <input type="checkbox" id="maintenance" class="checkbox_sied">
+            </div>
+            <div class="form-group">
+              <label for="theme" class="label_so_001_sied">Theme</label>
+              <select id="theme" class="select_so_001_sied">
+                <option>Light</option>
+                <option>Dark</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="admin-email" class="label_so_001_sied">Admin Email</label>
+              <input list="emails" class="textbox_001_sied" id="admin-email" autocomplete="off">
+              <datalist id="emails" class="datalist_sied_001">
+                <option value="admin@example.com"></option>
+                <option value="support@example.com"></option>
+              </datalist>
+            </div>
+            <div class="form-group">
+              <label for="description" class="label_so_001_sied">Description</label>
+              <textarea id="description" class="textarea_001_sied" rows="4">Enter info...</textarea>
+            </div>
+            <div class="form-actions">
+              <button type="button" class="btn_sied">Save Settings</button>
+              <button type="reset" class="btn_sied">Reset</button>
+            </div>
           </form>
         </section>
       </div>
