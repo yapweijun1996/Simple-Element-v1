@@ -32,15 +32,30 @@
       <div class="admin-content">
         <section id="content-dashboard" class="panel-content active">
           <h2 class="font_sied_p_003">Dashboard</h2>
-          <input type="button" class="btn_sied" value="Add User">
-          <input type="button" class="btn_sied" value="Remove User">
-          <input type="button" class="btn_sied" value="Refresh">
-          <br><br>
+          <!-- Summary Cards -->
+          <div class="card_sied">
+            <div class="card_header_sied">Total Users</div>
+            <div class="card_body_sied">120</div>
+          </div>
+          <div class="card_sied">
+            <div class="card_header_sied">Active Sessions</div>
+            <div class="card_body_sied">45</div>
+          </div>
+          <div class="card_sied">
+            <div class="card_header_sied">New Signups</div>
+            <div class="card_body_sied">5</div>
+          </div>
+          <!-- Quick Actions -->
+          <div class="radio_toolbar_sied" style="margin:16px 0;">
+            <div class="radio_toolbar_item_sied"><button class="btn_sied">Add User</button></div>
+            <div class="radio_toolbar_item_sied"><button class="btn_sied">Refresh Data</button></div>
+          </div>
+          <!-- Filters -->
           <label class="label_so_001_sied">Filter by Role:</label>
-          <select class="select_so_001_sied">
+          <select class="select_so_001_sied" style="margin-bottom:16px;">
             <option>All</option><option>Admin</option><option>User</option>
           </select>
-          <br><br>
+          <br>
           <label class="label_so_001_sied">Search Users:</label>
           <input list="user-list" class="textbox_001_sied" autocomplete="off">
           <datalist id="user-list" class="datalist_sied_001">

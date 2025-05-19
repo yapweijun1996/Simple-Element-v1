@@ -249,4 +249,26 @@
 .panel-content.active {
   display: block;
 }
-/* Admin Layout [end] */ 
+/* Admin Layout [end] */
+
+/* Card Component [start] */
+.card_sied {
+  display: inline-block;
+  width: calc(33.333% - 16px);
+  background-color: var(--backg-color-000);
+  border: 1px solid var(--border-color-000);
+  border-radius: 4px;
+  padding: 12px;
+  margin: 8px;
+  box-sizing: border-box;
+  vertical-align: top;
+}
+.card_header_sied {
+  font-weight: 600;
+  font-size: var(--font-size-p-002);
+  margin-bottom: 4px;
+}
+.card_body_sied {
+  font-size: var(--font-size-p-003);
+}
+/* Card Component [end] */ 
