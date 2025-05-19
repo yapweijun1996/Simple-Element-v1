@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Admin Panel</title>
   <link rel="stylesheet" href="simple-elements.css">
   <script src="simple-elements.js" defer></script>
@@ -9,21 +10,9 @@
 <body>
   <a href="#main-content" class="skip-link" tabindex="0">Skip to main content</a>
   <div class="admin-container">
-    <button class="sidebar-toggle" aria-label="Toggle menu" style="display:none;position:absolute;top:10px;left:10px;z-index:10;">☰</button>
+    <button class="sidebar-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
     <aside class="admin-sidebar" role="navigation" aria-label="Main menu">
-      <h2 class="font_sied_p_004">Menu</h2>
-      <nav>
-        <ul class="sidebar-menu">
-          <li><a href="index.html" class="sidebar-link active" aria-current="page">Dashboard</a></li>
-          <li><a href="users.html" class="sidebar-link">Users</a></li>
-          <li><a href="roles.html" class="sidebar-link">Roles</a></li>
-          <li><a href="analytics.html" class="sidebar-link">Analytics</a></li>
-          <li><a href="logs.html" class="sidebar-link">Activity Logs</a></li>
-          <li><a href="notifications.html" class="sidebar-link">Notifications</a></li>
-          <li><a href="settings.html" class="sidebar-link">Settings</a></li>
-          <li><a href="demo.html" class="sidebar-link">Demo Elements</a></li>
-        </ul>
-      </nav>
+      <!-- Sidebar content will be loaded by JavaScript -->
     </aside>
     <div class="admin-main" id="main-content" role="main">
       <header class="admin-header">
@@ -122,14 +111,14 @@
           <div class="card_sied">
             <div class="card_header_sied">Visitor Statistics</div>
             <div class="card_body_sied">[Chart Placeholder]</div>
-  </div>
+          </div>
           <div class="card_sied">
             <div class="card_header_sied">Sales Report</div>
             <div class="card_body_sied">[Chart Placeholder]</div>
-  </div>
+          </div>
           <div class="form-actions">
             <button class="btn_sied">Export Report</button>
-  </div>
+          </div>
         </section>
         <section id="content-logs" class="panel-content">
           <h2 class="font_sied_p_003">Activity Logs</h2>
@@ -137,11 +126,11 @@
           <div class="form-group">
             <label class="label_so_001_sied">Filter by Date</label>
             <input type="date" class="textbox_002_sied"> to <input type="date" class="textbox_002_sied">
-</div>
+          </div>
           <div class="form-group">
             <label class="label_so_001_sied">Filter by User/Action</label>
             <input type="text" class="textbox_001_sied" placeholder="Enter username or action">
-  </div>
+          </div>
           <!-- Logs Table -->
           <table class="table_sied">
             <thead><tr><th>Timestamp</th><th>User</th><th>Action</th><th>Status</th></tr></thead>
@@ -154,7 +143,7 @@
           <div class="pagination-toolbar">
             <button class="btn_sied">Prev</button>
             <button class="btn_sied">Next</button>
-  </div>
+          </div>
         </section>
         <section id="content-notifications" class="panel-content">
           <h2 class="font_sied_p_003">Notifications</h2>
@@ -169,17 +158,17 @@
             <div class="form-group">
               <label for="site-title" class="label_so_001_sied">Site Title</label>
               <input type="text" id="site-title" class="textbox_001_sied" value="My Site">
-  </div>
+            </div>
             <div class="form-group">
               <label for="maintenance" class="label_so_001_sied">Maintenance Mode</label>
               <input type="checkbox" id="maintenance" class="checkbox_sied">
-</div>
+            </div>
             <div class="form-group">
               <label for="theme" class="label_so_001_sied">Theme</label>
               <select id="theme" class="select_so_001_sied">
                 <option>Light</option>
                 <option>Dark</option>
-</select>
+              </select>
             </div>
             <div class="form-group">
               <label for="admin-email" class="label_so_001_sied">Admin Email</label>
@@ -187,7 +176,7 @@
               <datalist id="emails" class="datalist_sied_001">
                 <option value="admin@example.com"></option>
                 <option value="support@example.com"></option>
-</datalist>
+              </datalist>
             </div>
             <div class="form-group">
               <label for="description" class="label_so_001_sied">Description</label>
@@ -200,29 +189,6 @@
           </form>
         </section>
       </div>
-<script>
-        // Sidebar toggle for mobile
-        const sidebar = document.querySelector('.admin-sidebar');
-        const toggleBtn = document.querySelector('.sidebar-toggle');
-        function checkSidebarToggle() {
-          if (window.innerWidth <= 900) {
-            toggleBtn.style.display = 'block';
-            sidebar.style.display = 'none';
-    } else {
-            toggleBtn.style.display = 'none';
-            sidebar.style.display = '';
-          }
-        }
-        toggleBtn.addEventListener('click', function() {
-          if (sidebar.style.display === 'none') {
-            sidebar.style.display = '';
-          } else {
-            sidebar.style.display = 'none';
-          }
-        });
-        window.addEventListener('resize', checkSidebarToggle);
-        checkSidebarToggle();
-</script>
     </div>
   </div>
 </body>

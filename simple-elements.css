@@ -213,25 +213,125 @@
 /* Admin Layout [start] */
 .admin-container {
   display: flex;
-  height: 100vh;
-  font-family: var(--font-family-000);
-  color: var(--text-color-000);
+  min-height: 100vh;
 }
+
+/* Sidebar Styles */
 .admin-sidebar {
-  width: 220px;
-  background-color: var(--backg-color-000);
-  border-right: 1px solid var(--border-color-000);
-  padding: 16px;
-  box-sizing: border-box;
+  width: 250px;
+  background: #f5f5f5;
+  padding: 1rem;
+  border-right: 1px solid #ddd;
+  transition: transform 0.3s ease-in-out;
 }
-.admin-sidebar h2 {
-  margin-bottom: 12px;
+
+.sidebar-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
+
+.sidebar-link {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: #333;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.sidebar-link:hover {
+  background-color: #e0e0e0;
+}
+
+.sidebar-link.active {
+  background-color: #007bff;
+  color: white;
+}
+
+/* Mobile Sidebar Toggle */
+.sidebar-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  color: #333;
+}
+
+/* Main Content Area */
 .admin-main {
   flex: 1;
-  display: flex;
-  flex-direction: column;
+  padding: 1rem;
+  background: #fff;
 }
+
+.admin-header {
+  margin-bottom: 2rem;
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 900px) {
+  .admin-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    z-index: 1000;
+    transform: translateX(-100%);
+  }
+
+  .admin-sidebar[style*="display: block"] {
+    transform: translateX(0);
+  }
+
+  .sidebar-toggle {
+    display: block;
+  }
+
+  .admin-main {
+    margin-left: 0;
+  }
+
+  /* Improve touch targets on mobile */
+  .sidebar-link {
+    padding: 0.75rem 1rem;
+  }
+
+  /* Add backdrop when sidebar is open */
+  .admin-sidebar[style*="display: block"]::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+  }
+}
+
+/* Tablet Styles */
+@media (min-width: 901px) and (max-width: 1200px) {
+  .admin-sidebar {
+    width: 200px;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .admin-sidebar,
+  .sidebar-toggle {
+    display: none;
+  }
+
+  .admin-main {
+    margin: 0;
+    padding: 0;
+  }
+}
+
 .admin-header {
   background-color: var(--border-color-000);
   color: var(--backg-color-000);
