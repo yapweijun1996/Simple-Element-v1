@@ -8,6 +8,7 @@
 </head>
 <body>
   <div class="admin-container">
+    <button class="sidebar-toggle" aria-label="Toggle menu" style="display:none;position:absolute;top:10px;left:10px;z-index:10;">☰</button>
     <aside class="admin-sidebar">
       <h2 class="font_sied_p_004">Menu</h2>
       <div class="radio_toolbar_sied">
@@ -223,6 +224,28 @@
             document.getElementById('content-' + radio.value).classList.add('active');
           });
         });
+
+        // Sidebar toggle for mobile
+        const sidebar = document.querySelector('.admin-sidebar');
+        const toggleBtn = document.querySelector('.sidebar-toggle');
+        function checkSidebarToggle() {
+          if (window.innerWidth <= 900) {
+            toggleBtn.style.display = 'block';
+            sidebar.style.display = 'none';
+          } else {
+            toggleBtn.style.display = 'none';
+            sidebar.style.display = '';
+          }
+        }
+        toggleBtn.addEventListener('click', function() {
+          if (sidebar.style.display === 'none') {
+            sidebar.style.display = '';
+          } else {
+            sidebar.style.display = 'none';
+          }
+        });
+        window.addEventListener('resize', checkSidebarToggle);
+        checkSidebarToggle();
       </script>
     </div>
   </div>
