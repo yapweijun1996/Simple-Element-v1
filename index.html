@@ -7,14 +7,15 @@
   <script src="simple-elements.js" defer></script>
 </head>
 <body>
+  <a href="#main-content" class="skip-link" tabindex="0">Skip to main content</a>
   <div class="admin-container">
     <button class="sidebar-toggle" aria-label="Toggle menu" style="display:none;position:absolute;top:10px;left:10px;z-index:10;">☰</button>
-    <aside class="admin-sidebar">
+    <aside class="admin-sidebar" role="navigation" aria-label="Main menu">
       <h2 class="font_sied_p_004">Menu</h2>
       <div class="radio_toolbar_sied">
         <div class="radio_toolbar_item_sied">
           <input id="menu-dashboard" name="admin-menu" value="dashboard" type="radio" checked>
-          <label for="menu-dashboard">Dashboard</label>
+          <label for="menu-dashboard" aria-current="page">Dashboard</label>
         </div>
         <div class="radio_toolbar_item_sied">
           <input id="menu-users" name="admin-menu" value="users" type="radio">
@@ -42,7 +43,7 @@
         </div>
       </div>
     </aside>
-    <div class="admin-main">
+    <div class="admin-main" id="main-content" role="main">
       <header class="admin-header">
         <h1>Admin Panel</h1>
       </header>
@@ -176,9 +177,9 @@
         <section id="content-notifications" class="panel-content">
           <h2 class="font_sied_p_003">Notifications</h2>
           <button class="btn_sied" style="margin-bottom:16px;">Mark All as Read</button>
-          <div class="notification_sied unread">Server restarted at 02:00 AM</div>
-          <div class="notification_sied">New user signup: charlie</div>
-          <div class="notification_sied unread">High memory usage detected</div>
+          <div class="notification_sied unread" aria-live="polite">Server restarted at 02:00 AM</div>
+          <div class="notification_sied" aria-live="polite">New user signup: charlie</div>
+          <div class="notification_sied unread" aria-live="polite">High memory usage detected</div>
         </section>
         <section id="content-settings" class="panel-content">
           <h2 class="font_sied_p_003">Settings</h2>
