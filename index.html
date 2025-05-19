@@ -24,6 +24,10 @@
           <label for="menu-roles">Roles</label>
         </div>
         <div class="radio_toolbar_item_sied">
+          <input id="menu-analytics" name="admin-menu" value="analytics" type="radio">
+          <label for="menu-analytics">Analytics</label>
+        </div>
+        <div class="radio_toolbar_item_sied">
           <input id="menu-settings" name="admin-menu" value="settings" type="radio">
           <label for="menu-settings">Settings</label>
         </div>
@@ -116,6 +120,24 @@
               <button type="button" class="btn_sied">Update Role</button>
             </div>
           </form>
+        </section>
+        <section id="content-analytics" class="panel-content">
+          <h2 class="font_sied_p_003">Analytics</h2>
+          <div class="form-group">
+            <label class="label_so_001_sied">Date Range</label>
+            <input type="date" class="textbox_002_sied"> to <input type="date" class="textbox_002_sied">
+          </div>
+          <div class="card_sied">
+            <div class="card_header_sied">Visitor Statistics</div>
+            <div class="card_body_sied">[Chart Placeholder]</div>
+          </div>
+          <div class="card_sied">
+            <div class="card_header_sied">Sales Report</div>
+            <div class="card_body_sied">[Chart Placeholder]</div>
+          </div>
+          <div class="form-actions">
+            <button class="btn_sied">Export Report</button>
+          </div>
         </section>
         <section id="content-settings" class="panel-content">
           <h2 class="font_sied_p_003">Settings</h2>
