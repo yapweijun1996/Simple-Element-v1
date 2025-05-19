@@ -19,7 +19,11 @@
           <input id="menu-users" name="admin-menu" value="users" type="radio">
           <label for="menu-users">Users</label>
         </div>
-        <div class="radio_toolbar_sied">
+        <div class="radio_toolbar_item_sied">
+          <input id="menu-roles" name="admin-menu" value="roles" type="radio">
+          <label for="menu-roles">Roles</label>
+        </div>
+        <div class="radio_toolbar_item_sied">
           <input id="menu-settings" name="admin-menu" value="settings" type="radio">
           <label for="menu-settings">Settings</label>
         </div>
@@ -82,6 +86,36 @@
             <button class="btn_sied">Prev</button>
             <button class="btn_sied">Next</button>
           </div>
+        </section>
+        <section id="content-roles" class="panel-content">
+          <h2 class="font_sied_p_003">Roles & Permissions</h2>
+          <!-- Roles Table -->
+          <table class="table_sied">
+            <thead><tr><th><input type="checkbox" class="checkbox_sied"></th><th>Role Name</th><th>Permissions</th></tr></thead>
+            <tbody>
+              <tr><td><input type="checkbox" class="checkbox_sied"></td><td>Admin</td><td>Read, Write, Execute</td></tr>
+              <tr><td><input type="checkbox" class="checkbox_sied"></td><td>User</td><td>Read</td></tr>
+            </tbody>
+          </table>
+          <!-- Role Form -->
+          <form>
+            <div class="form-group">
+              <label for="role-name" class="label_so_001_sied">Role Name</label>
+              <input type="text" id="role-name" class="textbox_001_sied">
+            </div>
+            <div class="form-group">
+              <label for="permissions" class="label_so_001_sied">Permissions</label>
+              <select id="permissions" class="select_so_001_sied" multiple>
+                <option>Read</option>
+                <option>Write</option>
+                <option>Execute</option>
+              </select>
+            </div>
+            <div class="form-actions">
+              <button type="button" class="btn_sied">Add Role</button>
+              <button type="button" class="btn_sied">Update Role</button>
+            </div>
+          </form>
         </section>
         <section id="content-settings" class="panel-content">
           <h2 class="font_sied_p_003">Settings</h2>
